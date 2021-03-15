@@ -18,10 +18,3 @@ data class CaseDto(
     val medianPrice: String
 
 ) : Serializable
-
-//{
-//    "success":true,
-//    "lowest_price":"59,20 pуб.",
-//    "volume":"191,830",
-//    "median_price":"60,19 pуб."
-//}
