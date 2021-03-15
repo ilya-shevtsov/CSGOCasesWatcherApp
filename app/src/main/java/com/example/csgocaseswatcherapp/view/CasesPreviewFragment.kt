@@ -45,7 +45,8 @@ class CasesPreviewFragment : Fragment() {
         getCaseList()
     }
 
-    private val caseNameList = listOf("Glove%20Case")
+    private val caseNameList = listOf("Glove%20Case","Operation%20Breakout%20Weapon%20Case")
+
 
     private fun getCaseList() {
         Observable.just(caseNameList)
@@ -58,10 +59,11 @@ class CasesPreviewFragment : Fragment() {
                         caseName = caseName
                     ).toObservable()
             }
+            .toList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
-                onNext = { caseList ->
+                onSuccess = { caseList ->
                     Log.d("M_CasesPreviewFragment.getCaseList", "$caseList")
                     errorView.isVisible = false
                 },
