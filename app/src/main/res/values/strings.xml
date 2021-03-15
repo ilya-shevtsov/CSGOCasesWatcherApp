@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CSGOCasesWatcherApp</string>
+    <string name="something_went_wrong_try_again">something_went_wrong_try_again</string>
+    <string name="cases">Cases</string>
+</resources>
