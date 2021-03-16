@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragmentAlbumsPreviewRefresher"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragmentAlbumsPreviewRecycler"
+        android:id="@+id/fragmentCasePreviewRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible" />
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_case" />
 
     <include
         layout="@layout/error_view"
         android:visibility="gone" />
-
 
 </LinearLayout>

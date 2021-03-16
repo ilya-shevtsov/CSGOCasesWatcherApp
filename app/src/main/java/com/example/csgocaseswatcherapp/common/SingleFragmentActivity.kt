@@ -2,19 +2,18 @@ package com.example.csgocaseswatcherapp.common
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
-import com.example.csgocaseswatcherapp.view.CasesPreviewFragment
+import com.example.csgocaseswatcherapp.view.CasePreviewFragment
 import com.example.csgocaseswatcherapp.R
 
 open class SingleFragmentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.ac_swipe_container)
+        setContentView(R.layout.fragment_container)
 
         if (savedInstanceState == null) {
-            changeFragment(fragment = CasesPreviewFragment.newInstance())
+            changeFragment(fragment = CasePreviewFragment.newInstance())
         }
     }
 

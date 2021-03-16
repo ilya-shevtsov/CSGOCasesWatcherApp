@@ -18,13 +18,13 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 
-class CasesPreviewFragment : Fragment() {
+class CasePreviewFragment : Fragment() {
 
     private lateinit var errorView: View
 
     companion object {
-        fun newInstance(): CasesPreviewFragment {
-            return CasesPreviewFragment()
+        fun newInstance(): CasePreviewFragment {
+            return CasePreviewFragment()
         }
     }
 
@@ -33,7 +33,7 @@ class CasesPreviewFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.case_preview, container, false)
+        return inflater.inflate(R.layout.fragment_case_preview, container, false)
 
     }
 
