@@ -53,10 +53,8 @@ class CasesPreviewFragment : Fragment() {
 
     private fun getCaseList() {
         Observable.just(caseNameList)
-            .toListOfCastDto()
-            .map { listOfCaseDto ->
-                listOfCaseDto.map { caseDto -> caseDtoToCase(caseDto) }
-            }
+            .toListOfCaseDto()
+            .toListOfCase()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
@@ -71,10 +69,9 @@ class CasesPreviewFragment : Fragment() {
             .disposeOnDestroy(viewLifecycleOwner)
     }
 
-    fun caseDtoToCase(caseDto: CaseDto, caseName:String): Case {
-
+    fun caseDtoToCase(caseDto: CaseDto, caseName: String): Case {
         val newCaseName = caseName
-            .replace("%20"," ")
+            .replace("%20", " ")
 
         val newLowestPrice = caseDto.lowestPrice
             .replace(" pуб.", "")
@@ -97,7 +94,14 @@ class CasesPreviewFragment : Fragment() {
         )
     }
 
-    fun Observable<List<String>>.toListOfCastDto(): Single<List<CaseDto>> =
+    fun Single<List<Pair<CaseDto, String>>>.toListOfCase(): Single<List<Case>> =
+        map { listOfCaseDto ->
+            listOfCaseDto.map { (caseDto, caseName) ->
+                caseDtoToCase(caseDto, caseName)
+            }
+        }
+
+    fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CaseDto, String>>> =
         flatMap { caseNameList -> Observable.fromIterable(caseNameList) }
             .flatMap { caseName ->
                 ApiTools.getApiService()
@@ -105,7 +109,9 @@ class CasesPreviewFragment : Fragment() {
                         appId = 730,
                         currency = 5,
                         caseName = caseName
-                    ).toObservable()
+                    ).toObservable().map { caseDto ->
+                        caseDto to caseName
+                    }
             }
             .toList()
 }
