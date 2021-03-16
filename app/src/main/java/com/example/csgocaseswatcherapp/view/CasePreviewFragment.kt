@@ -52,7 +52,7 @@ class CasePreviewFragment : Fragment() {
     }
 
 
-    private val caseNameList = listOf("Glove%20Case", "Operation%20Breakout%20Weapon%20Case")
+    private val caseNameList = listOf("Clutch%20Case", "Prisma%20Case","Prisma%202%20Case")
 
 
     private fun getCaseList() {
