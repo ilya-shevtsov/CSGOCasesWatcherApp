@@ -52,7 +52,7 @@ class CasePreviewFragment : Fragment() {
     }
 
 
-    private val caseNameList = listOf("Clutch%20Case", "Prisma%20Case","Prisma%202%20Case")
+    private val caseNameList = listOf("Clutch%20Case", "Prisma%20Case", "Prisma%202%20Case")
 
 
     private fun getCaseList() {
@@ -74,7 +74,11 @@ class CasePreviewFragment : Fragment() {
             .disposeOnDestroy(viewLifecycleOwner)
     }
 
-    fun caseDtoToCase(caseDto: CaseDto, caseName: String): Case {
+    fun caseDtoToCase(
+        caseDto: CaseDto,
+        caseName: String
+    ): Case {
+
         val newCaseName = caseName
             .replace("%20", " ")
 
@@ -91,11 +95,13 @@ class CasePreviewFragment : Fragment() {
             .replace(" pуб.", "")
             .replace(",", ".")
             .toFloat()
+
         return Case(
             name = newCaseName,
             lowestPrice = newLowestPrice,
             volume = newVolume,
-            medianPrice = newMedianPrice
+            medianPrice = newMedianPrice,
+            imageUrl = "https://api.steamapis.com/image/item/730/$caseName"
         )
     }
 

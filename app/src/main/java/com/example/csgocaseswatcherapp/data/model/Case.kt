@@ -4,5 +4,6 @@ data class Case(
     val name: String,
     val lowestPrice: Float,
     val volume: Int,
-    val medianPrice: Float
+    val medianPrice: Float,
+    val imageUrl:String
 )

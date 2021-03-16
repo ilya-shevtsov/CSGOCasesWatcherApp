@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-   >
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
 
     <TextView
+        android:layout_marginTop="8dp"
         android:id="@+id/listItemCaseName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,11 +17,12 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="CaseName" />
 
-    <View
-        android:id="@+id/caseImage"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/listItemCaseImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
+        fresco:actualImageScaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@id/listItemLowestPrice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listItemCaseName"
@@ -32,9 +34,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@id/caseImage"
-        app:layout_constraintTop_toBottomOf="@+id/listItemCaseName"
         app:layout_constraintBottom_toTopOf="@id/listItemVolume"
+        app:layout_constraintStart_toEndOf="@id/listItemCaseImage"
+        app:layout_constraintTop_toBottomOf="@+id/listItemCaseName"
         tools:text="@string/case_lowest_price" />
 
     <TextView
@@ -42,8 +44,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@id/caseImage"
         app:layout_constraintBottom_toTopOf="@id/listItemMedianPrice"
+        app:layout_constraintStart_toEndOf="@id/listItemCaseImage"
         app:layout_constraintTop_toBottomOf="@+id/listItemLowestPrice"
         tools:text="@string/case_volume" />
 
@@ -52,17 +54,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@id/caseImage"
+        app:layout_constraintBottom_toBottomOf="@id/listItemCaseImage"
+        app:layout_constraintStart_toEndOf="@id/listItemCaseImage"
         app:layout_constraintTop_toBottomOf="@+id/listItemVolume"
-        app:layout_constraintBottom_toBottomOf="@id/caseImage"
         tools:text="@string/case_median_price" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintTop_toBottomOf="@id/caseImage"
-        android:background="@color/white" />
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/listItemCaseImage" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
