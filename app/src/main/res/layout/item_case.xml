@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginBottom="8dp"
-        tools:text="Case Name:" />
+        tools:text="CaseName" />
 
     <TextView
         android:id="@+id/listItemLowestPrice"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
-        tools:text="Lowest Price:" />
+        tools:text="@string/case_lowest_price" />
 
     <TextView
         android:id="@+id/listItemVolume"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
-        tools:text="Volume:" />
+        tools:text="@string/case_volume" />
 
     <TextView
         android:id="@+id/listItemMedianPrice"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
-        tools:text="Median Price:" />
+        tools:text="@string/case_median_price" />
 
 
 </LinearLayout>

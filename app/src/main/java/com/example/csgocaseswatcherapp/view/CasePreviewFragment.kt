@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.common.disposeOnDestroy
 import com.example.csgocaseswatcherapp.data.model.Case
@@ -21,6 +23,8 @@ import io.reactivex.schedulers.Schedulers
 class CasePreviewFragment : Fragment() {
 
     private lateinit var errorView: View
+    private lateinit var recycler: RecyclerView
+    private val adapter: CasePreviewAdapter = CasePreviewAdapter { }
 
     companion object {
         fun newInstance(): CasePreviewFragment {
@@ -38,15 +42,15 @@ class CasePreviewFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        recycler = view.findViewById(R.id.fragmentCasePreviewRecycler)
+        recycler.layoutManager = LinearLayoutManager(activity)
+        recycler.adapter = adapter
         errorView = view.findViewById(R.id.errorView)
-        activity!!.setTitle(R.string.cases)
-        getCases()
-
-    }
-
-    private fun getCases() {
+        activity!!.setTitle(R.string.cases_preview)
         getCaseList()
+
     }
+
 
     private val caseNameList = listOf("Glove%20Case", "Operation%20Breakout%20Weapon%20Case")
 
@@ -61,6 +65,7 @@ class CasePreviewFragment : Fragment() {
                 onSuccess = { caseList ->
                     Log.d("M_CasesPreviewFragment.getCaseList", "$caseList")
                     errorView.isVisible = false
+                    adapter.addData(caseList, true)
                 },
                 onError = {
                     errorView.isVisible = true

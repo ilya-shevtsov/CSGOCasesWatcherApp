@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">CSGOCasesWatcherApp</string>
     <string name="something_went_wrong_try_again">something_went_wrong_try_again</string>
-    <string name="cases">Cases</string>
+    <string name="cases_preview">Cases Preview</string>
+    <string name="case_volume">Volume: %s</string>
+    <string name="case_median_price">Median Price: %s</string>
+    <string name="case_lowest_price">Lowest Price: %s</string>
 </resources>
