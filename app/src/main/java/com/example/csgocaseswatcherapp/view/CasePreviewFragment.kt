@@ -52,7 +52,42 @@ class CasePreviewFragment : Fragment() {
     }
 
 
-    private val caseNameList = listOf("Clutch%20Case", "Prisma%20Case", "Prisma%202%20Case")
+    private val caseNameList = listOf(
+        "Chroma%202%20Case",
+        "Chroma%203%20Case",
+        "Chroma%20Case",
+        "Clutch%20Case",
+        "CS%3AGO%20Weapon%20Case",
+        "CS%3AGO%20Weapon%20Case%202",
+        "CS%3AGO%20Weapon%20Case%203",
+        "CS20%20Case",
+        "Danger%20Zone%20Case",
+        "eSports%202013%20Case",
+        "eSports%202013%20Winter%20Case",
+        "eSports%202014%20Summer%20Case",
+        "Falchion%20Case",
+        "Fracture%20Case",
+        "Gamma%202%20Case",
+        "Gamma%20Case",
+        "Glove%20Case",
+        "Horizon%20Case",
+//        "Huntsman%20Weapon%20Case",
+//        "Operation%20Bravo%20Case",
+//        "Operation%20Breakout%20Weapon%20Case",
+//        "Operation%20Broken%20Fang%20Case",
+//        "Operation%20Hydra%20Case",
+//        "Operation%20Phoenix%20Weapon%20Case",
+//        "Operation%20Vanguard%20Weapon%20Case",
+//        "Operation%20Wildfire%20Case",
+//        "Prisma%20Case",
+//        "Prisma%202%20Case",
+//        "Revolver%20Case",
+//        "Shadow%20Case",
+//        "Shattered%20Web%20Case",
+//        "Spectrum%202%20Case",
+//        "Spectrum%20Case",
+//        "Winter%20Offensive%20Weapon%20Case"
+    )
 
 
     private fun getCaseList() {
@@ -81,6 +116,7 @@ class CasePreviewFragment : Fragment() {
 
         val newCaseName = caseName
             .replace("%20", " ")
+            .replace("%3A", ":")
 
         val newLowestPrice = caseDto.lowestPrice
             .replace(" pуб.", "")
@@ -105,16 +141,16 @@ class CasePreviewFragment : Fragment() {
         )
     }
 
-    fun Single<List<Pair<CaseDto, String>>>.toListOfCase(): Single<List<Case>> =
+    private fun Single<List<Pair<CaseDto, String>>>.toListOfCase(): Single<List<Case>> =
         map { listOfCaseDto ->
             listOfCaseDto.map { (caseDto, caseName) ->
                 caseDtoToCase(caseDto, caseName)
             }
         }
 
-    fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CaseDto, String>>> =
+    private fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CaseDto, String>>> =
         flatMap { caseNameList -> Observable.fromIterable(caseNameList) }
-            .flatMap { caseName ->
+            .concatMap { caseName ->
                 ApiTools.getApiService()
                     .getCase(
                         appId = 730,
