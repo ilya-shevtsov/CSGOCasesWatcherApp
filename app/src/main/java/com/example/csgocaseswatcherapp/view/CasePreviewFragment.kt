@@ -19,6 +19,7 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 class CasePreviewFragment : Fragment() {
 
@@ -53,9 +54,9 @@ class CasePreviewFragment : Fragment() {
 
 
     private val caseNameList = listOf(
+        "Chroma%20Case",
         "Chroma%202%20Case",
         "Chroma%203%20Case",
-        "Chroma%20Case",
         "Clutch%20Case",
         "CS%3AGO%20Weapon%20Case",
         "CS%3AGO%20Weapon%20Case%202",
@@ -71,24 +72,23 @@ class CasePreviewFragment : Fragment() {
         "Gamma%20Case",
         "Glove%20Case",
         "Horizon%20Case",
-//        "Huntsman%20Weapon%20Case",
-//        "Operation%20Bravo%20Case",
-//        "Operation%20Breakout%20Weapon%20Case",
-//        "Operation%20Broken%20Fang%20Case",
-//        "Operation%20Hydra%20Case",
-//        "Operation%20Phoenix%20Weapon%20Case",
-//        "Operation%20Vanguard%20Weapon%20Case",
-//        "Operation%20Wildfire%20Case",
-//        "Prisma%20Case",
-//        "Prisma%202%20Case",
-//        "Revolver%20Case",
-//        "Shadow%20Case",
-//        "Shattered%20Web%20Case",
-//        "Spectrum%202%20Case",
-//        "Spectrum%20Case",
-//        "Winter%20Offensive%20Weapon%20Case"
+        "Huntsman%20Weapon%20Case",
+        "Operation%20Bravo%20Case",
+        "Operation%20Breakout%20Weapon%20Case",
+        "Operation%20Broken%20Fang%20Case",
+        "Operation%20Hydra%20Case",
+        "Operation%20Phoenix%20Weapon%20Case",
+        "Operation%20Vanguard%20Weapon%20Case",
+        "Operation%20Wildfire%20Case",
+        "Prisma%20Case",
+        "Prisma%202%20Case",
+        "Revolver%20Case",
+        "Shadow%20Case",
+        "Shattered%20Web%20Case",
+        "Spectrum%202%20Case",
+        "Spectrum%20Case",
+        "Winter%20Offensive%20Weapon%20Case"
     )
-
 
     private fun getCaseList() {
         Observable.just(caseNameList)
@@ -98,7 +98,7 @@ class CasePreviewFragment : Fragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { caseList ->
-                    Log.d("M_CasesPreviewFragment.getCaseList", "$caseList")
+//                    Log.d("M_CasesPreviewFragment.getCaseList", "$caseList")
                     errorView.isVisible = false
                     adapter.addData(caseList, true)
                 },
@@ -109,7 +109,7 @@ class CasePreviewFragment : Fragment() {
             .disposeOnDestroy(viewLifecycleOwner)
     }
 
-    fun caseDtoToCase(
+    private fun caseDtoToCase(
         caseDto: CaseDto,
         caseName: String
     ): Case {
@@ -158,7 +158,13 @@ class CasePreviewFragment : Fragment() {
                         caseName = caseName
                     ).toObservable().map { caseDto ->
                         caseDto to caseName
+
                     }
+                    .doOnError { Log.e("M_toListOfCaseDto", "firstRetryWhen: $it") }
+                    .retryWhen {
+                        Log.d("M_toListOfCaseDto","insideFirstRTW: $it")
+                        Observable.timer(60, TimeUnit.SECONDS) }
             }
             .toList()
 }
+
