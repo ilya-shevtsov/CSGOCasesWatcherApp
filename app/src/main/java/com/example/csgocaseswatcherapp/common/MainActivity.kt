@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.csgocaseswatcherapp.view.CasePreviewFragment
 import com.example.csgocaseswatcherapp.R
 
-open class SingleFragmentActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
