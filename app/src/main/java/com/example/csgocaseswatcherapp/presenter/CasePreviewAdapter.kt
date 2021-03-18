@@ -1,11 +1,11 @@
-package com.example.csgocaseswatcherapp.view
+package com.example.csgocaseswatcherapp.presenter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.data.model.Case
+import com.example.csgocaseswatcherapp.model.Case
 
 class CasePreviewAdapter (
     private val onItemClicked: (username: String) -> Unit

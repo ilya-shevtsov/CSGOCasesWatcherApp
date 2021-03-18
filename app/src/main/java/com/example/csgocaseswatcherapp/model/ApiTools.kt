@@ -1,8 +1,5 @@
-package com.example.csgocaseswatcherapp.utils
+package com.example.csgocaseswatcherapp.model
 
-import android.util.Log
-import com.example.csgocaseswatcherapp.data.api.ServerApi
-import com.google.gson.Gson
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

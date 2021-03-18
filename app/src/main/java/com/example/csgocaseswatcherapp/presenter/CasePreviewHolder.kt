@@ -1,10 +1,10 @@
-package com.example.csgocaseswatcherapp.view
+package com.example.csgocaseswatcherapp.presenter
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.data.model.Case
+import com.example.csgocaseswatcherapp.model.Case
 import com.facebook.drawee.view.SimpleDraweeView
 import kotlinx.android.extensions.LayoutContainer
 

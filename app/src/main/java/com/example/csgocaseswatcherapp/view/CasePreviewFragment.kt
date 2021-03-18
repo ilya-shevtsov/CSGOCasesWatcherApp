@@ -9,11 +9,11 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.common.disposeOnDestroy
-import com.example.csgocaseswatcherapp.data.model.Case
-import com.example.csgocaseswatcherapp.data.model.CaseDto
-import com.example.csgocaseswatcherapp.utils.ApiTools
+import com.example.csgocaseswatcherapp.*
+import com.example.csgocaseswatcherapp.model.ApiTools
+import com.example.csgocaseswatcherapp.model.Case
+import com.example.csgocaseswatcherapp.model.CaseDto
+import com.example.csgocaseswatcherapp.presenter.CasePreviewAdapter
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -47,12 +47,10 @@ class CasePreviewFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(activity)
         recycler.adapter = adapter
         errorView = view.findViewById(R.id.errorView)
-        activity!!.setTitle(R.string.cases_preview)
         getCaseList()
-
     }
 
-    private val caseNameList = listOf(
+    val caseNameList = listOf(
         "Chroma%20Case",
         "Chroma%202%20Case",
         "Chroma%203%20Case",
@@ -89,7 +87,7 @@ class CasePreviewFragment : Fragment() {
 //        "Winter%20Offensive%20Weapon%20Case"
     )
 
-    private fun getCaseList() {
+    fun getCaseList() {
         Observable.just(caseNameList)
             .toListOfCaseDto()
             .toListOfCase()
@@ -97,7 +95,6 @@ class CasePreviewFragment : Fragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { caseList ->
-                    errorView.isVisible = false
                     adapter.addData(caseList, true)
                 },
                 onError = {
@@ -107,7 +104,7 @@ class CasePreviewFragment : Fragment() {
             .disposeOnDestroy(viewLifecycleOwner)
     }
 
-    private fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CaseDto, String>>> =
+    fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CaseDto, String>>> =
         flatMap { caseNameList -> Observable.fromIterable(caseNameList) }
             .concatMap { caseName ->
                 ApiTools.getApiService()
@@ -125,14 +122,14 @@ class CasePreviewFragment : Fragment() {
             }
             .toList()
 
-    private fun Single<List<Pair<CaseDto, String>>>.toListOfCase(): Single<List<Case>> =
+    fun Single<List<Pair<CaseDto, String>>>.toListOfCase(): Single<List<Case>> =
         map { listOfCaseDto ->
             listOfCaseDto.map { (caseDto, caseName) ->
                 caseDtoToCase(caseDto, caseName)
             }
         }
 
-    private fun caseDtoToCase(
+    fun caseDtoToCase(
         caseDto: CaseDto,
         caseName: String
     ): Case {
