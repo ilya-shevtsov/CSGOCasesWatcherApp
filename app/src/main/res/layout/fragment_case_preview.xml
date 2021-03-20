@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragmentCasePreviewRecycler"
+        android:id="@+id/caseRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -16,6 +16,7 @@
         tools:listitem="@layout/item_case" />
 
     <include
+        android:id="@+id/errorView"
         layout="@layout/error_view"
         android:visibility="gone" />
 

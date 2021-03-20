@@ -7,15 +7,15 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.*
+import com.example.csgocaseswatcherapp.databinding.FragmentCasePreviewBinding
 import com.example.csgocaseswatcherapp.model.Case
 import com.example.csgocaseswatcherapp.presentation.CasePresenter
 
-class CasePreviewFragment : Fragment(), CaseView {
+class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
 
-    private lateinit var errorView: View
-    private lateinit var recycler: RecyclerView
+    private lateinit var binding: FragmentCasePreviewBinding
+
     private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {})
     private val casePresenter = CasePresenter(this)
 
@@ -30,26 +30,25 @@ class CasePreviewFragment : Fragment(), CaseView {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_case_preview, container, false)
-
+        binding = FragmentCasePreviewBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recycler = view.findViewById(R.id.fragmentCasePreviewRecycler)
-        recycler.layoutManager = LinearLayoutManager(activity)
-        recycler.adapter = adapter
-        errorView = view.findViewById(R.id.errorView)
+        with(binding) {
+            caseRecyclerView.layoutManager = LinearLayoutManager(activity)
+            caseRecyclerView.adapter = adapter
+        }
         casePresenter.getCaseList().disposeOnDestroy(viewLifecycleOwner)
-
     }
 
     override fun showCases(cases: List<Case>) {
-        errorView.isVisible = false
+        binding.errorView.root.isVisible = false
         adapter.addData(cases, true)
     }
 
     override fun showError() {
-        errorView.isVisible = true
+        binding.errorView.root.isVisible = true
     }
 }
 
