@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.common
+package com.example.csgocaseswatcherapp
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver

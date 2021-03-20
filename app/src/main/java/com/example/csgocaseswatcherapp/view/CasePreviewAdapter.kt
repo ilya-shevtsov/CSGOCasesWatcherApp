@@ -5,9 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.data.model.Case
+import com.example.csgocaseswatcherapp.model.Case
+import com.example.csgocaseswatcherapp.view.CasePreviewHolder
 
-class CasePreviewAdapter (
+class CasePreviewAdapter constructor(
     private val onItemClicked: (username: String) -> Unit
 ) : RecyclerView.Adapter<CasePreviewHolder>() {
 

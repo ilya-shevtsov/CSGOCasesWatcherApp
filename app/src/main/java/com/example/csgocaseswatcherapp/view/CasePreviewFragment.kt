@@ -1,7 +1,6 @@
 package com.example.csgocaseswatcherapp.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,23 +8,16 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.common.disposeOnDestroy
-import com.example.csgocaseswatcherapp.data.model.Case
-import com.example.csgocaseswatcherapp.data.model.CaseDto
-import com.example.csgocaseswatcherapp.utils.ApiTools
-import io.reactivex.Observable
-import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
-import java.util.concurrent.TimeUnit
+import com.example.csgocaseswatcherapp.*
+import com.example.csgocaseswatcherapp.model.Case
+import com.example.csgocaseswatcherapp.presentation.CasePresenter
 
-class CasePreviewFragment : Fragment() {
+class CasePreviewFragment : Fragment(), CaseView {
 
     private lateinit var errorView: View
     private lateinit var recycler: RecyclerView
-    private val adapter: CasePreviewAdapter = CasePreviewAdapter { }
+    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {})
+    private val casePresenter = CasePresenter(this)
 
     companion object {
         fun newInstance(): CasePreviewFragment {
@@ -47,121 +39,17 @@ class CasePreviewFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(activity)
         recycler.adapter = adapter
         errorView = view.findViewById(R.id.errorView)
-        activity!!.setTitle(R.string.cases_preview)
-        getCaseList()
+        casePresenter.getCaseList().disposeOnDestroy(viewLifecycleOwner)
 
     }
 
-    private val caseNameList = listOf(
-        "Chroma%20Case",
-        "Chroma%202%20Case",
-        "Chroma%203%20Case",
-        "Clutch%20Case",
-//        "CS%3AGO%20Weapon%20Case",
-//        "CS%3AGO%20Weapon%20Case%202",
-//        "CS%3AGO%20Weapon%20Case%203",
-//        "CS20%20Case",
-//        "Danger%20Zone%20Case",
-//        "eSports%202013%20Case",
-//        "eSports%202013%20Winter%20Case",
-//        "eSports%202014%20Summer%20Case",
-//        "Falchion%20Case",
-//        "Fracture%20Case",
-//        "Gamma%202%20Case",
-//        "Gamma%20Case",
-//        "Glove%20Case",
-//        "Horizon%20Case",
-//        "Huntsman%20Weapon%20Case",
-//        "Operation%20Bravo%20Case",
-//        "Operation%20Breakout%20Weapon%20Case",
-//        "Operation%20Broken%20Fang%20Case",
-//        "Operation%20Hydra%20Case",
-//        "Operation%20Phoenix%20Weapon%20Case",
-//        "Operation%20Vanguard%20Weapon%20Case",
-//        "Operation%20Wildfire%20Case",
-//        "Prisma%20Case",
-//        "Prisma%202%20Case",
-//        "Revolver%20Case",
-//        "Shadow%20Case",
-//        "Shattered%20Web%20Case",
-//        "Spectrum%202%20Case",
-//        "Spectrum%20Case",
-//        "Winter%20Offensive%20Weapon%20Case"
-    )
-
-    private fun getCaseList() {
-        Observable.just(caseNameList)
-            .toListOfCaseDto()
-            .toListOfCase()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { caseList ->
-                    errorView.isVisible = false
-                    adapter.addData(caseList, true)
-                },
-                onError = {
-                    errorView.isVisible = true
-                    Log.e("M_CasesPreviewFragment.getCaseList", "$it")
-                })
-            .disposeOnDestroy(viewLifecycleOwner)
+    override fun showCases(cases: List<Case>) {
+        errorView.isVisible = false
+        adapter.addData(cases, true)
     }
 
-    private fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CaseDto, String>>> =
-        flatMap { caseNameList -> Observable.fromIterable(caseNameList) }
-            .concatMap { caseName ->
-                ApiTools.getApiService()
-                    .getCase(
-                        appId = 730,
-                        currency = 5,
-                        caseName = caseName
-                    ).toObservable().map { caseDto ->
-                        caseDto to caseName
-
-                    }
-                    .retryWhen {
-                        Observable.timer(60, TimeUnit.SECONDS)
-                    }
-            }
-            .toList()
-
-    private fun Single<List<Pair<CaseDto, String>>>.toListOfCase(): Single<List<Case>> =
-        map { listOfCaseDto ->
-            listOfCaseDto.map { (caseDto, caseName) ->
-                caseDtoToCase(caseDto, caseName)
-            }
-        }
-
-    private fun caseDtoToCase(
-        caseDto: CaseDto,
-        caseName: String
-    ): Case {
-
-        val newCaseName = caseName
-            .replace("%20", " ")
-            .replace("%3A", ":")
-
-        val newLowestPrice = caseDto.lowestPrice
-            .replace(" pуб.", "")
-            .replace(",", ".")
-            .toFloat()
-
-        val newVolume = caseDto.volume
-            .replace(",", "")
-            .toInt()
-
-        val newMedianPrice = caseDto.medianPrice
-            .replace(" pуб.", "")
-            .replace(",", ".")
-            .toFloat()
-
-        return Case(
-            name = newCaseName,
-            lowestPrice = newLowestPrice,
-            volume = newVolume,
-            medianPrice = newMedianPrice,
-            imageUrl = "https://api.steamapis.com/image/item/730/$caseName"
-        )
+    override fun showError() {
+        errorView.isVisible = true
     }
 }
 

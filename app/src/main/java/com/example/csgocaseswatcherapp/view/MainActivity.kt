@@ -1,9 +1,8 @@
-package com.example.csgocaseswatcherapp.common
+package com.example.csgocaseswatcherapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.csgocaseswatcherapp.view.CasePreviewFragment
 import com.example.csgocaseswatcherapp.R
 
 open class MainActivity : AppCompatActivity() {
