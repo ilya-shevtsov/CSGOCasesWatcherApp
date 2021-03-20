@@ -9,7 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiTools {
 
-
     companion object {
 
         private var serverApi: ServerApi? = null
