@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presenter
+package com.example.csgocaseswatcherapp.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.model.Case
+import com.example.csgocaseswatcherapp.view.CasePreviewHolder
 
-class CasePreviewAdapter (
+class CasePreviewAdapter constructor(
     private val onItemClicked: (username: String) -> Unit
 ) : RecyclerView.Adapter<CasePreviewHolder>() {
 

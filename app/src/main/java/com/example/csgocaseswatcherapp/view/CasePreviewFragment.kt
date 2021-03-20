@@ -13,7 +13,6 @@ import com.example.csgocaseswatcherapp.*
 import com.example.csgocaseswatcherapp.model.ApiTools
 import com.example.csgocaseswatcherapp.model.Case
 import com.example.csgocaseswatcherapp.model.CaseDto
-import com.example.csgocaseswatcherapp.presenter.CasePreviewAdapter
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -21,16 +20,21 @@ import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
-class CasePreviewFragment : Fragment() {
+class CasePreviewFragment : Fragment(), CaseView {
+
 
     private lateinit var errorView: View
     private lateinit var recycler: RecyclerView
-    private val adapter: CasePreviewAdapter = CasePreviewAdapter { }
+    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {})
 
     companion object {
         fun newInstance(): CasePreviewFragment {
             return CasePreviewFragment()
         }
+    }
+
+    override fun showCases(cases: List<Case>) {
+        adapter.addData(cases, true)
     }
 
     override fun onCreateView(
@@ -88,20 +92,23 @@ class CasePreviewFragment : Fragment() {
     )
 
     fun getCaseList() {
-        Observable.just(caseNameList)
-            .toListOfCaseDto()
-            .toListOfCase()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onSuccess = { caseList ->
-                    adapter.addData(caseList, true)
-                },
-                onError = {
-                    errorView.isVisible = true
-                    Log.e("M_CasesPreviewFragment.getCaseList", "$it")
-                })
-            .disposeOnDestroy(viewLifecycleOwner)
+        presenter(this)
+        presenter(CasePrinter())
+//        Observable.just(caseNameList)
+//            .toListOfCaseDto()
+//            .toListOfCase()
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribeBy(
+//                onSuccess = { caseList ->
+//        errorView.isVisible = false
+//                    adapter.addData(caseList, true)
+//                },
+//                onError = {
+//                    errorView.isVisible = true
+//                    Log.e("M_CasesPreviewFragment.getCaseList", "$it")
+//                })
+//            .disposeOnDestroy(viewLifecycleOwner)
     }
 
     fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CaseDto, String>>> =
@@ -128,6 +135,24 @@ class CasePreviewFragment : Fragment() {
                 caseDtoToCase(caseDto, caseName)
             }
         }
+
+    fun presenter(view: CaseView) {
+        Observable.just(caseNameList)
+            .toListOfCaseDto()
+            .toListOfCase()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeBy(
+                onSuccess = { caseList ->
+                    view.showCases(caseList)
+                },
+                onError = {
+                    errorView.isVisible = true
+                    Log.e("M_CasesPreviewFragment.getCaseList", "$it")
+                })
+            .disposeOnDestroy(viewLifecycleOwner)
+
+    }
 
     fun caseDtoToCase(
         caseDto: CaseDto,

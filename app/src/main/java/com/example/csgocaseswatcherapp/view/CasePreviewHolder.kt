@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presenter
+package com.example.csgocaseswatcherapp.view
 
 import android.view.View
 import android.widget.TextView
