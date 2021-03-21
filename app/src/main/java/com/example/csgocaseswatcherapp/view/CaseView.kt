@@ -1,10 +1,10 @@
 package com.example.csgocaseswatcherapp.view
 
-import com.example.csgocaseswatcherapp.model.Case
+import com.example.csgocaseswatcherapp.model.CasePreview
 
 interface CaseView {
 
-    fun showCases(cases: List<Case>)
+    fun showCases(cases: List<CasePreview>)
 
     fun showError()
 }

@@ -1,13 +1,10 @@
 package com.example.csgocaseswatcherapp.view
 
 import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.databinding.FragmentCasePreviewBinding
 import com.example.csgocaseswatcherapp.databinding.ItemCaseBinding
-import com.example.csgocaseswatcherapp.model.Case
-import com.facebook.drawee.view.SimpleDraweeView
+import com.example.csgocaseswatcherapp.model.CasePreview
 import kotlinx.android.extensions.LayoutContainer
 
 class CasePreviewHolder(
@@ -17,7 +14,7 @@ class CasePreviewHolder(
     private val binding: ItemCaseBinding = ItemCaseBinding.bind(containerView)
 
     fun bind(
-        case: Case,
+        case: CasePreview,
         onItemClicked: (caseName: String) -> Unit
 
     ) {

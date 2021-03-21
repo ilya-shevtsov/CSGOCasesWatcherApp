@@ -3,7 +3,7 @@ package com.example.csgocaseswatcherapp.model
 import java.io.Serializable
 import com.google.gson.annotations.SerializedName
 
-data class CaseDto(
+data class CasePreviewDto(
 
     @SerializedName("success")
     val success: Boolean,

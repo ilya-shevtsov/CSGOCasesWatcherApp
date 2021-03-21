@@ -14,6 +14,6 @@ interface ServerApi {
 
         @Query(value = "market_hash_name", encoded = true) caseName: String
 
-    ): Single<CaseDto>
+    ): Single<CasePreviewDto>
 }
 

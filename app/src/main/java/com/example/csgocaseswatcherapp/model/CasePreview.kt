@@ -1,11 +1,9 @@
 package com.example.csgocaseswatcherapp.model
 
-data class Case(
+data class CasePreview(
     val name: String,
-    val releaseDate: String,
-    val dropStatus: String,
     val lowestPrice: Float,
     val volume: Int,
     val medianPrice: Float,
-    val imageUrl: String
+    val imageUrl:String
 )

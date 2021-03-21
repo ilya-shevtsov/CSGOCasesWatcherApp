@@ -2,8 +2,8 @@ package com.example.csgocaseswatcherapp.presentation
 
 import android.util.Log
 import com.example.csgocaseswatcherapp.model.ApiTools
-import com.example.csgocaseswatcherapp.model.Case
-import com.example.csgocaseswatcherapp.model.CaseDto
+import com.example.csgocaseswatcherapp.model.CasePreview
+import com.example.csgocaseswatcherapp.model.CasePreviewDto
 import com.example.csgocaseswatcherapp.view.CaseView
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -69,7 +69,7 @@ class CasePresenter(private val view: CaseView) {
                 })
     }
 
-    private fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CaseDto, String>>> =
+    private fun Observable<List<String>>.toListOfCaseDto(): Single<List<Pair<CasePreviewDto, String>>> =
         flatMap { caseNameList -> Observable.fromIterable(caseNameList) }
             .concatMap { caseName ->
                 ApiTools.getApiService()
@@ -87,7 +87,7 @@ class CasePresenter(private val view: CaseView) {
             }
             .toList()
 
-    private fun Single<List<Pair<CaseDto, String>>>.toListOfCase(): Single<List<Case>> =
+    private fun Single<List<Pair<CasePreviewDto, String>>>.toListOfCase(): Single<List<CasePreview>> =
         map { listOfCaseDto ->
             listOfCaseDto.map { (caseDto, caseName) ->
                 caseDtoToCase(caseDto, caseName)
@@ -95,9 +95,9 @@ class CasePresenter(private val view: CaseView) {
         }
 
     private fun caseDtoToCase(
-        caseDto: CaseDto,
+        caseDto: CasePreviewDto,
         caseName: String
-    ): Case {
+    ): CasePreview {
 
         val newCaseName = caseName
             .replace("%20", " ")
@@ -117,7 +117,7 @@ class CasePresenter(private val view: CaseView) {
             .replace(",", ".")
             .toFloat()
 
-        return Case(
+        return CasePreview(
             name = newCaseName,
             lowestPrice = newLowestPrice,
             volume = newVolume,
