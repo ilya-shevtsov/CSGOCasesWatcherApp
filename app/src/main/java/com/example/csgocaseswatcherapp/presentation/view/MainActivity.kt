@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.view
+package com.example.csgocaseswatcherapp.presentation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

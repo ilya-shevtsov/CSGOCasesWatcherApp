@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.view
+package com.example.csgocaseswatcherapp.presentation.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.*
 import com.example.csgocaseswatcherapp.databinding.FragmentCasePreviewBinding
-import com.example.csgocaseswatcherapp.model.CasePreview
 import com.example.csgocaseswatcherapp.presentation.CasePresenter
+import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem
 
 class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
 
@@ -42,7 +42,7 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
         casePresenter.getCaseList().disposeOnDestroy(viewLifecycleOwner)
     }
 
-    override fun showCases(cases: List<CasePreview>) {
+    override fun showCases(cases: List<CasePreviewItem>) {
         binding.errorView.root.isVisible = false
         adapter.addData(cases, true)
     }

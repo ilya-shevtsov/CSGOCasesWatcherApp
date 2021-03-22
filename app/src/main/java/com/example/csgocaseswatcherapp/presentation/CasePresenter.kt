@@ -1,10 +1,12 @@
 package com.example.csgocaseswatcherapp.presentation
 
 import android.util.Log
-import com.example.csgocaseswatcherapp.model.ApiTools
-import com.example.csgocaseswatcherapp.model.CasePreview
-import com.example.csgocaseswatcherapp.model.CasePreviewDto
-import com.example.csgocaseswatcherapp.view.CaseView
+import com.example.csgocaseswatcherapp.data.CasePreviewMapper
+import com.example.csgocaseswatcherapp.data.api.ApiTools
+import com.example.csgocaseswatcherapp.domain.CasePreview
+import com.example.csgocaseswatcherapp.data.CasePreviewDto
+import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItemMapper
+import com.example.csgocaseswatcherapp.presentation.view.CaseView
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -61,7 +63,8 @@ class CasePresenter(private val view: CaseView) {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy(
                 onSuccess = { caseList ->
-                    view.showCases(caseList)
+                    val items = caseList.map(CasePreviewItemMapper::map)
+                    view.showCases(items)
                 },
                 onError = {
                     view.showError()
@@ -90,39 +93,9 @@ class CasePresenter(private val view: CaseView) {
     private fun Single<List<Pair<CasePreviewDto, String>>>.toListOfCase(): Single<List<CasePreview>> =
         map { listOfCaseDto ->
             listOfCaseDto.map { (caseDto, caseName) ->
-                caseDtoToCase(caseDto, caseName)
+                CasePreviewMapper.map(caseDto, caseName)
             }
         }
 
-    private fun caseDtoToCase(
-        caseDto: CasePreviewDto,
-        caseName: String
-    ): CasePreview {
 
-        val newCaseName = caseName
-            .replace("%20", " ")
-            .replace("%3A", ":")
-
-        val newLowestPrice = caseDto.lowestPrice
-            .replace(" pуб.", "")
-            .replace(",", ".")
-            .toFloat()
-
-        val newVolume = caseDto.volume
-            .replace(",", "")
-            .toInt()
-
-        val newMedianPrice = caseDto.medianPrice
-            .replace(" pуб.", "")
-            .replace(",", ".")
-            .toFloat()
-
-        return CasePreview(
-            name = newCaseName,
-            lowestPrice = newLowestPrice,
-            volume = newVolume,
-            medianPrice = newMedianPrice,
-            imageUrl = "https://api.steamapis.com/image/item/730/$caseName"
-        )
-    }
 }

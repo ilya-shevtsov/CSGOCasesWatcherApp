@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.model
+package com.example.csgocaseswatcherapp.domain
 
 data class Case(
     val name: String,

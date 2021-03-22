@@ -1,17 +1,19 @@
-package com.example.csgocaseswatcherapp.view
+package com.example.csgocaseswatcherapp.presentation.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.model.CasePreview
+import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem
 
 class CasePreviewAdapter constructor(
     private val onItemClicked: (username: String) -> Unit
 ) : RecyclerView.Adapter<CasePreviewHolder>() {
 
-    private val caseList: MutableList<CasePreview> = mutableListOf()
+
+
+    private val caseList: MutableList<CasePreviewItem> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CasePreviewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -20,7 +22,7 @@ class CasePreviewAdapter constructor(
     }
 
     override fun onBindViewHolder(holder: CasePreviewHolder, position: Int) {
-        val case: CasePreview = caseList[position]
+        val case: CasePreviewItem = caseList[position]
         holder.bind(case, onItemClicked)
     }
 
@@ -29,7 +31,7 @@ class CasePreviewAdapter constructor(
 
     }
 
-    fun addData(data: List<CasePreview>, refresh: Boolean) {
+    fun addData(data: List<CasePreviewItem>, refresh: Boolean) {
         if (refresh) {
             caseList.clear()
         }

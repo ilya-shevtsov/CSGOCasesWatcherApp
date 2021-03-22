@@ -1,10 +1,10 @@
-package com.example.csgocaseswatcherapp.view
+package com.example.csgocaseswatcherapp.presentation.view
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.databinding.ItemCaseBinding
-import com.example.csgocaseswatcherapp.model.CasePreview
+import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem
 import kotlinx.android.extensions.LayoutContainer
 
 class CasePreviewHolder(
@@ -14,7 +14,7 @@ class CasePreviewHolder(
     private val binding: ItemCaseBinding = ItemCaseBinding.bind(containerView)
 
     fun bind(
-        case: CasePreview,
+        case: CasePreviewItem,
         onItemClicked: (caseName: String) -> Unit
 
     ) {
