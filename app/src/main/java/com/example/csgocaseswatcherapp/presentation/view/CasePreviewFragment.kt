@@ -8,7 +8,9 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.*
+import com.example.csgocaseswatcherapp.data.CaseRepository
 import com.example.csgocaseswatcherapp.databinding.FragmentCasePreviewBinding
+import com.example.csgocaseswatcherapp.domain.GetCaseListUseCase
 import com.example.csgocaseswatcherapp.presentation.CasePresenter
 import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem
 
@@ -17,7 +19,7 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
     private lateinit var binding: FragmentCasePreviewBinding
 
     private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {})
-    private val casePresenter = CasePresenter(this)
+    private val casePresenter = CasePresenter(this, GetCaseListUseCase(CaseRepository()))
 
     companion object {
         fun newInstance(): CasePreviewFragment {
@@ -29,7 +31,7 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCasePreviewBinding.inflate(inflater, container, false)
         return binding.root
     }
