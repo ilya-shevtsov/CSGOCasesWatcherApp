@@ -5,4 +5,6 @@
     <string name="case_volume">Volume: %s</string>
     <string name="case_median_price">Median Price: %s</string>
     <string name="case_lowest_price">Lowest Price: %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
