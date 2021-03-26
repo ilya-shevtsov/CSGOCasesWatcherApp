@@ -9,11 +9,11 @@ open class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_container)
+        setContentView(R.layout.fragment_start)
 
-        if (savedInstanceState == null) {
-            changeFragment(fragment = CasePreviewFragment.newInstance())
-        }
+//        if (savedInstanceState == null) {
+//            changeFragment(fragment = CasePreviewFragment.newInstance())
+//        }
     }
 
     open fun changeFragment(fragment: Fragment) {
