@@ -20,6 +20,7 @@ class StartFragment : Fragment(R.layout.fragment_start) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
         binding.casePreviewButton.setOnClickListener{
@@ -27,7 +28,6 @@ class StartFragment : Fragment(R.layout.fragment_start) {
         }
 
         return binding.root
-
     }
 
 }
