@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.view
+package com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

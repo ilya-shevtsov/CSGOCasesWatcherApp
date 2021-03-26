@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.fragment
+package com.example.csgocaseswatcherapp.presentation.view.fragments.start
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

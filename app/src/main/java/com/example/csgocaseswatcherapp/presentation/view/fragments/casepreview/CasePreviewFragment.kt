@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.view
+package com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +13,7 @@ import com.example.csgocaseswatcherapp.databinding.FragmentCasePreviewBinding
 import com.example.csgocaseswatcherapp.domain.GetCaseListUseCase
 import com.example.csgocaseswatcherapp.presentation.CasePresenter
 import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem
+import com.example.csgocaseswatcherapp.presentation.view.CaseView
 
 class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
 

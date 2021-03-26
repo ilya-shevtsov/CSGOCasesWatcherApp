@@ -1,12 +1,12 @@
-package com.example.csgocaseswatcherapp
+package com.example.csgocaseswatcherapp.presentation.view.fragments.portfolio
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.databinding.FragmentPortfolioBinding
-import com.example.csgocaseswatcherapp.databinding.FragmentStartBinding
 
 class PortfolioFragment : Fragment(R.layout.fragment_portfolio) {
 
