@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.*
 import com.example.csgocaseswatcherapp.data.CaseRepository
@@ -19,7 +21,10 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
 
     private lateinit var binding: FragmentCasePreviewBinding
 
-    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {})
+    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {
+        val action = CasePreviewFragmentDirections.actionCasePreviewFragmentToCaseDetailsFragment()
+        findNavController().navigate(action)
+    })
     private val casePresenter = CasePresenter(this, GetCaseListUseCase(CaseRepository()))
 
     companion object {

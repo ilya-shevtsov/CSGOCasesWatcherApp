@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/caseDetailsFragment"
-        android:name="com.example.csgocaseswatcherapp.CaseDetailsFragment"
+        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.casedetails.CaseDetailsFragment"
         android:label="Case Details"
         tools:layout="@layout/fragment_case_details" >
         <action
