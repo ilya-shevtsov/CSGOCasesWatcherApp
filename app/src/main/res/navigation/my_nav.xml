@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_startFragment_to_casePreviewFragment"
             app:destination="@id/casePreviewFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
     </fragment>
     <fragment
         android:id="@+id/casePreviewFragment"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_case_preview" >
         <action
             android:id="@+id/action_casePreviewFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="com.example.csgocaseswatcherapp.PortfolioFragment"
+        android:label="fragment_portfolio"
+        tools:layout="@layout/fragment_portfolio" >
+        <action
+            android:id="@+id/action_portfolioFragment_to_startFragment"
             app:destination="@id/startFragment" />
     </fragment>
 </navigation>

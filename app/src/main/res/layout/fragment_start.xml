@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/PortfolioButton"
+        android:id="@+id/portfolioButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/portfolio"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/case_preview"
-        app:layout_constraintBottom_toTopOf="@+id/PortfolioButton"
+        app:layout_constraintBottom_toTopOf="@+id/portfolioButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />

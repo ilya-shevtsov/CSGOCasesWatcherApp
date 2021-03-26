@@ -27,6 +27,10 @@ class StartFragment : Fragment(R.layout.fragment_start) {
            findNavController().navigate(R.id.casePreviewFragment)
         }
 
+        binding.portfolioButton.setOnClickListener{
+            findNavController().navigate(R.id.portfolioFragment)
+        }
+
         return binding.root
     }
 
