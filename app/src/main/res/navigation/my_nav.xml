@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.csgocaseswatcherapp.fragment.StartFragment"
-        android:label="fragment_start"
+        android:label="Main Menu"
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_startFragment_to_casePreviewFragment"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/casePreviewFragment"
         android:name="com.example.csgocaseswatcherapp.presentation.view.CasePreviewFragment"
-        android:label="CasePreviewFragment"
+        android:label="Case Preview"
         tools:layout="@layout/fragment_case_preview" >
         <action
             android:id="@+id/action_casePreviewFragment_to_startFragment"
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/portfolioFragment"
         android:name="com.example.csgocaseswatcherapp.PortfolioFragment"
-        android:label="fragment_portfolio"
+        android:label="Portfolio"
         tools:layout="@layout/fragment_portfolio" >
         <action
             android:id="@+id/action_portfolioFragment_to_startFragment"
