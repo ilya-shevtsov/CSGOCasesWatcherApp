@@ -91,12 +91,33 @@
         tools:text="@string/case_drop_status" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/descriptionGuideLine"
+        android:id="@+id/descriptionGuideLineTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        fresco:layout_constraintGuide_begin="210dp" />
+        fresco:layout_constraintGuide_end="520dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/descriptionGuideLineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        fresco:layout_constraintGuide_end="320dp" />
+
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:rowCount="3"
+        android:layout_margin="8dp"
+        fresco:layout_constraintBottom_toBottomOf="parent"
+        fresco:layout_constraintEnd_toEndOf="parent"
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@id/descriptionGuideLineBottom">
+
+    </GridLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
