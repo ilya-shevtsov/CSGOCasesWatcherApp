@@ -5,24 +5,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.csgocaseswatcherapp.R
+import com.example.csgocaseswatcherapp.databinding.FragmentStartBinding
 
 
-class StartFragment : Fragment() {
+class StartFragment : Fragment(R.layout.fragment_start) {
+
+
+    private lateinit var binding: FragmentStartBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_start, container, false)
+    ): View {
+        binding = FragmentStartBinding.inflate(inflater, container, false)
 
+        binding.casePreviewButton.setOnClickListener{
+           findNavController().navigate(R.id.casePreviewFragment)
+        }
 
-//        view.casePreviewButton.setOnClickListener{
-//           findNavController()
-//        }
-
-        return view
+        return binding.root
 
     }
 
