@@ -15,7 +15,7 @@ class CasePreviewHolder(
 
     fun bind(
         case: CasePreviewItem,
-        onItemClicked: (caseName: String) -> Unit
+        onItemClicked: (case: CasePreviewItem) -> Unit
 
     ) {
 
@@ -27,8 +27,8 @@ class CasePreviewHolder(
             volume.text = itemView.context.getString(R.string.case_volume, case.volume.toString())
             medianPrice.text =
                 itemView.context.getString(R.string.case_median_price, case.medianPrice.toString())
-            root.setOnClickListener {
-                onItemClicked.invoke(case.name)
+            rowLayout.setOnClickListener {
+                onItemClicked.invoke(case)
             }
         }
     }

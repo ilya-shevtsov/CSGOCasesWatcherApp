@@ -8,7 +8,7 @@ import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem
 
 class CasePreviewAdapter constructor(
-    private val onItemClicked: (username: String) -> Unit
+    private val onItemClicked: (case: CasePreviewItem) -> Unit
 ) : RecyclerView.Adapter<CasePreviewHolder>() {
 
 

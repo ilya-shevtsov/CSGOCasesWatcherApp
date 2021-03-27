@@ -46,5 +46,8 @@
         <action
             android:id="@+id/action_caseDetailsFragment_to_casePreviewFragment"
             app:destination="@id/casePreviewFragment" />
+        <argument
+            android:name="currentCase"
+            app:argType="com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem" />
     </fragment>
 </navigation>

@@ -21,17 +21,12 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
 
     private lateinit var binding: FragmentCasePreviewBinding
 
-    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {
-        val action = CasePreviewFragmentDirections.actionCasePreviewFragmentToCaseDetailsFragment()
+    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {case ->
+        val action = CasePreviewFragmentDirections.actionCasePreviewFragmentToCaseDetailsFragment(case)
         findNavController().navigate(action)
     })
     private val casePresenter = CasePresenter(this, GetCaseListUseCase(CaseRepository()))
 
-    companion object {
-        fun newInstance(): CasePreviewFragment {
-            return CasePreviewFragment()
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
