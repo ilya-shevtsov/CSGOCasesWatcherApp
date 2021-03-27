@@ -42,7 +42,7 @@ class GetCaseListUseCase(private val caseRepository: CaseRepository) {
 //        "Winter%20Offensive%20Weapon%20Case"
     )
 
-    fun getCaseList(): Single<List<CasePreview>> {
+    fun getCasePreviewList(): Single<List<CasePreview>> {
         return caseRepository.getCaseList(caseNameList)
     }
 }

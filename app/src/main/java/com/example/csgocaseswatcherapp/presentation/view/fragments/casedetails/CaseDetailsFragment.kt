@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.databinding.FragmentCaseDetailsBinding
-import com.example.csgocaseswatcherapp.databinding.FragmentPortfolioBinding
 
 class CaseDetailsFragment : Fragment(R.layout.fragment_case_details) {
 
