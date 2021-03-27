@@ -23,13 +23,13 @@ class CaseDetailsFragment : Fragment(R.layout.fragment_case_details) {
 
         with(binding) {
             caseName.text = args.currentCase.name
-            lowestPrice.text = getString(R.string.case_lowest_price, args.currentCase.lowestPrice.toString())
-            medianPrice.text = getString(R.string.case_median_price, args.currentCase.medianPrice.toString())
+            lowestPrice.text =
+                getString(R.string.case_lowest_price, args.currentCase.lowestPrice.toString())
+            medianPrice.text =
+                getString(R.string.case_median_price, args.currentCase.medianPrice.toString())
             volume.text = getString(R.string.case_volume, args.currentCase.volume.toString())
             caseImage.setImageURI(args.currentCase.imageUrl)
         }
-
-
         return binding.root
     }
 

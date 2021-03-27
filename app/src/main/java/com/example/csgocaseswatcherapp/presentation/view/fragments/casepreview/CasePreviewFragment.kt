@@ -21,8 +21,9 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
 
     private lateinit var binding: FragmentCasePreviewBinding
 
-    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = {case ->
-        val action = CasePreviewFragmentDirections.actionCasePreviewFragmentToCaseDetailsFragment(case)
+    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = { case ->
+        val action =
+            CasePreviewFragmentDirections.actionCasePreviewFragmentToCaseDetailsFragment(case)
         findNavController().navigate(action)
     })
     private val casePresenter = CasePresenter(this, GetCaseListUseCase(CaseRepository()))

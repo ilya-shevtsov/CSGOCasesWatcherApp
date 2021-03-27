@@ -9,5 +9,5 @@ data class CasePreviewItem(
     val lowestPrice: Float,
     val volume: Int,
     val medianPrice: Float,
-    val imageUrl:String
-):Parcelable
+    val imageUrl: String
+) : Parcelable

@@ -16,7 +16,6 @@ class CasePreviewHolder(
     fun bind(
         case: CasePreviewItem,
         onItemClicked: (case: CasePreviewItem) -> Unit
-
     ) {
 
         with(binding) {
@@ -32,5 +31,4 @@ class CasePreviewHolder(
             }
         }
     }
-
 }

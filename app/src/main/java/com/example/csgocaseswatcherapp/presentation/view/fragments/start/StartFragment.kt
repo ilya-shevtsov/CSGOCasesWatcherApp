@@ -12,9 +12,7 @@ import com.example.csgocaseswatcherapp.databinding.FragmentStartBinding
 
 class StartFragment : Fragment(R.layout.fragment_start) {
 
-
     private lateinit var binding: FragmentStartBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,15 +21,14 @@ class StartFragment : Fragment(R.layout.fragment_start) {
 
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
-        binding.casePreviewButton.setOnClickListener{
-           findNavController().navigate(R.id.casePreviewFragment)
+        binding.casePreviewButton.setOnClickListener {
+            findNavController().navigate(R.id.casePreviewFragment)
         }
 
-        binding.portfolioButton.setOnClickListener{
+        binding.portfolioButton.setOnClickListener {
             findNavController().navigate(R.id.portfolioFragment)
         }
 
         return binding.root
     }
-
 }
