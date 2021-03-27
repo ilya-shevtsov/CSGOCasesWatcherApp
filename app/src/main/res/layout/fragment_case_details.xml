@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
     tools:context=".presentation.view.fragments.casedetails.CaseDetailsFragment">
 
 
@@ -11,7 +12,6 @@
         android:id="@+id/caseName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:textSize="20sp"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintHorizontal_bias="0.5"
@@ -23,7 +23,6 @@
         android:id="@+id/caseImage"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginStart="8dp"
         fresco:actualImageScaleType="fitCenter"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@id/caseName"
@@ -90,34 +89,50 @@
         fresco:layout_constraintTop_toBottomOf="@id/releaseDate"
         tools:text="@string/case_drop_status" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/descriptionGuideLineTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        fresco:layout_constraintGuide_end="520dp" />
+    <View
+        android:id="@+id/descriptionSeparatorOne"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        fresco:layout_constraintEnd_toEndOf="parent"
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintBottom_toTopOf="@id/description"
+        fresco:layout_constraintTop_toBottomOf="@id/caseImage" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/descriptionGuideLineBottom"
+    <TextView
+        android:id="@+id/description"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        fresco:layout_constraintGuide_end="320dp" />
+        android:layout_height="0dp"
+        android:text="@string/descriptionExample"
+        fresco:layout_constraintBottom_toTopOf="@+id/descriptionSeparatorTwo"
+        fresco:layout_constraintEnd_toEndOf="parent"
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@id/caseImage" />
+
+    <View
+        android:id="@+id/descriptionSeparatorTwo"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        fresco:layout_constraintBottom_toTopOf="@id/grid"
+        fresco:layout_constraintEnd_toEndOf="parent"
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@id/description" />
 
 
     <GridLayout
         android:id="@+id/grid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:columnCount="6"
         android:rowCount="3"
-        android:layout_margin="8dp"
         fresco:layout_constraintBottom_toBottomOf="parent"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintStart_toStartOf="parent"
-        fresco:layout_constraintTop_toBottomOf="@id/descriptionGuideLineBottom">
-
-    </GridLayout>
+        fresco:layout_constraintTop_toBottomOf="@id/descriptionSeparatorTwo"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
