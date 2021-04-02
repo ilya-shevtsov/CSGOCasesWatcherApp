@@ -18,7 +18,7 @@ interface ServerApi {
 //
 //    ): Single<CasePreviewDto>
 
-    @GET("getCase/")
+    @GET("getCase")
     fun getCaseList(): Single<List<CaseDto>>
 }
 
