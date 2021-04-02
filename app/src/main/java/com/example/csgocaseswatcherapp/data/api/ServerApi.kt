@@ -19,14 +19,6 @@ interface ServerApi {
 //    ): Single<CasePreviewDto>
 
     @GET("getCase/")
-    fun getCaseList(
-        @Query("name") name: String,
-        @Query("releaseDate") releaseDate: String,
-        @Query("dropStatus") dropStatus: String,
-        @Query("lowestPrice") lowestPrice: Double,
-        @Query("volume") volume: Int,
-        @Query("medianPrice") medianPrice: Double,
-        @Query("imageUrl") imageUrl: String
-    ): Single<List<CaseDto>>
+    fun getCaseList(): List<CaseDto>
 }
 
