@@ -62,7 +62,7 @@ class GetCaseListUseCase(private val caseRepository: CaseRepository) {
             2059.66,
             "https://api.steamapis.com/image/item/730/eSports%202013%20Case"))
 
-    fun getCasePreviewList(): List<CasePreview> {
+    fun getCasePreviewList(): Single<List<CasePreview>> {
         return caseRepository.getCasePreviewList()
     }
 }

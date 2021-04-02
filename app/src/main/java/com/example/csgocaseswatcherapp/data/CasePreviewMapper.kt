@@ -8,6 +8,7 @@ object CasePreviewMapper {
         caseDto: CaseDto,
     ): CasePreview {
 
+
         val newCaseName = caseDto.name
 
         val newLowestPrice = caseDto.lowestPrice
