@@ -42,7 +42,6 @@ class GetCaseListUseCase(private val caseRepository: CaseRepository) {
         "Winter%20Offensive%20Weapon%20Case"
     )
 
-
     private val caseList = listOf<Case>(
         Case("Chroma Case",
             "08.01.2015",
@@ -63,7 +62,7 @@ class GetCaseListUseCase(private val caseRepository: CaseRepository) {
             2059.66,
             "https://api.steamapis.com/image/item/730/eSports%202013%20Case"))
 
-    fun getCasePreviewList(): Single<List<CasePreview>> {
-        return caseRepository.getCaseList(caseNameList)
+    fun getCasePreviewList(): List<CasePreview> {
+        return caseRepository.getCasePreviewList()
     }
 }
