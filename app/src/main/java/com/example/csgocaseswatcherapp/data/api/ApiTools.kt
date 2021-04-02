@@ -25,6 +25,7 @@ class ApiTools {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
         }
+        //I am ready 
 
         fun getApiService(): ServerApi {
             if (serverApi == null) {
