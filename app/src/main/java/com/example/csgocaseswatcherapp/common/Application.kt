@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp
+package com.example.csgocaseswatcherapp.common
 
 import android.app.Application
 import com.facebook.drawee.backends.pipeline.Fresco

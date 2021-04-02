@@ -5,4 +5,11 @@
     <string name="case_volume">Volume: %s</string>
     <string name="case_median_price">Median Price: %s</string>
     <string name="case_lowest_price">Lowest Price: %s</string>
+    <string name="case_release_date">Release Date: %s</string>
+    <string name="case_drop_status">Drop Status: %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="case_preview">Case Preview</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="descriptionExample">The Chroma Case is a weapon case consisting of 14 community-desgined weapon skins released as part of the January 8, 2015 update. It requires a Chroma Case Key to be opened. The Chroma Case also has six exclusive community created knife finishes: Damascus Steel, Doppler, Marble Fade, Tiger Tooth, Rust Coat, and Ultraviolet. The Spectrum Case and Spectrum 2 Case includes these Chroma finishes on the Huntsman Knife, Butterfly Knife, Falchion Knife, Shadow Daggers and the Bowie Knife. The Prisma Case contains these Chroma finishes on the Navaja Knife, Stiletto Knife, Talon Knife, and the Ursus Knife.</string>
 </resources>

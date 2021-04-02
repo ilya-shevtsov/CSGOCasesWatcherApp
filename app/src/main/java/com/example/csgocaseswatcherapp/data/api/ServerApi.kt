@@ -1,5 +1,6 @@
-package com.example.csgocaseswatcherapp.model
+package com.example.csgocaseswatcherapp.data.api
 
+import com.example.csgocaseswatcherapp.data.CasePreviewDto
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
