@@ -19,13 +19,13 @@ class ApiTools {
 
         private fun getRetrofit(): Retrofit {
             return Retrofit.Builder()
-                .baseUrl("https://steamcommunity.com/market/")
+                .baseUrl("http://127.0.0.1:8080/")
                 .client(getClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
         }
-        //I am ready 
+
 
         fun getApiService(): ServerApi {
             if (serverApi == null) {
