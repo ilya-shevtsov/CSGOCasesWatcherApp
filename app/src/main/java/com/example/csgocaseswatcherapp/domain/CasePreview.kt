@@ -2,8 +2,8 @@ package com.example.csgocaseswatcherapp.domain
 
 data class CasePreview(
     val name: String,
-    val lowestPrice: Float,
+    val lowestPrice: Double,
     val volume: Int,
-    val medianPrice: Float,
+    val medianPrice: Double,
     val imageUrl: String
 )

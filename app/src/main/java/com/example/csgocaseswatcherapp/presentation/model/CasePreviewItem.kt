@@ -6,8 +6,8 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class CasePreviewItem(
     val name: String,
-    val lowestPrice: Float,
+    val lowestPrice: Double,
     val volume: Int,
-    val medianPrice: Float,
+    val medianPrice: Double,
     val imageUrl: String
 ) : Parcelable

@@ -5,6 +5,10 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.security.cert.X509Certificate
+import javax.net.ssl.SSLContext
+import javax.net.ssl.TrustManager
+import javax.net.ssl.X509TrustManager
 
 
 class ApiTools {
@@ -19,12 +23,13 @@ class ApiTools {
 
         private fun getRetrofit(): Retrofit {
             return Retrofit.Builder()
-                .baseUrl("https://steamcommunity.com/market/")
+                .baseUrl("http://192.168.1.89:8080/")
                 .client(getClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
         }
+
 
         fun getApiService(): ServerApi {
             if (serverApi == null) {
@@ -34,3 +39,4 @@ class ApiTools {
         }
     }
 }
+

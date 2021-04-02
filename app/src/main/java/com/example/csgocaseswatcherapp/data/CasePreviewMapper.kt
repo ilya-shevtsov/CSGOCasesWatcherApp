@@ -5,34 +5,27 @@ import com.example.csgocaseswatcherapp.domain.CasePreview
 object CasePreviewMapper {
 
     fun map(
-        caseDto: CasePreviewDto,
-        caseName: String
+        caseDto: CaseDto,
     ): CasePreview {
 
-        val newCaseName = caseName
-            .replace("%20", " ")
-            .replace("%3A", ":")
+
+        val newCaseName = caseDto.name
 
         val newLowestPrice = caseDto.lowestPrice
-            .replace(" pуб.", "")
-            .replace(",", ".")
-            .toFloat()
 
         val newVolume = caseDto.volume
-            .replace(",", "")
-            .toInt()
 
         val newMedianPrice = caseDto.medianPrice
-            .replace(" pуб.", "")
-            .replace(",", ".")
-            .toFloat()
+
+        val newImageUrl = caseDto.imageUrl
+
 
         return CasePreview(
             name = newCaseName,
             lowestPrice = newLowestPrice,
             volume = newVolume,
             medianPrice = newMedianPrice,
-            imageUrl = "https://api.steamapis.com/image/item/730/$caseName"
+            imageUrl = newImageUrl
         )
     }
 }
