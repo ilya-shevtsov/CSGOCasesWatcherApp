@@ -10,7 +10,6 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-
 class ApiTools {
 
     companion object {
@@ -29,7 +28,6 @@ class ApiTools {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
         }
-
 
         fun getApiService(): ServerApi {
             if (serverApi == null) {

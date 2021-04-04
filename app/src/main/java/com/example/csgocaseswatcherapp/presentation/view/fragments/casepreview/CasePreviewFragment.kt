@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.*
 import com.example.csgocaseswatcherapp.core.CaseWatcherApplication
+import com.example.csgocaseswatcherapp.core.disposeOnDestroy
 import com.example.csgocaseswatcherapp.databinding.FragmentCasePreviewBinding
 import javax.inject.Inject
 

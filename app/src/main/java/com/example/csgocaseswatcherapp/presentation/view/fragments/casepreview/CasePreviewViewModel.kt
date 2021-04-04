@@ -42,9 +42,8 @@ class CasePreviewViewModel @Inject constructor(
     }
 
     private fun showCaseList(caseList: List<CasePreview>) {
-        val items = caseList.map(CasePreviewItemMapper::map)
         val state = CasePreviewViewState(
-            casePreviewItemList = items,
+            casePreviewItemList = caseList.map(CasePreviewItemMapper::map),
             isError = false
         )
         viewStateLiveData.postValue(state)

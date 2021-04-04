@@ -9,8 +9,6 @@ class CaseWatcherApplication : Application() {
 
     private lateinit var appComponent: AppComponent
 
-
-
     override fun onCreate() {
         super.onCreate()
         Fresco.initialize(this)
@@ -18,5 +16,4 @@ class CaseWatcherApplication : Application() {
     }
 
     open fun getAppComponent() = appComponent
-
 }
