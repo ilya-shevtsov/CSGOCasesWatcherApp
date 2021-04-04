@@ -41,7 +41,7 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview), CaseView {
         binding = FragmentCasePreviewBinding.inflate(inflater, container, false)
 
         viewModel = ViewModelProvider(this).get(CasePreviewViewModel::class.java)
-
+//ddd
         return binding.root
     }
 
