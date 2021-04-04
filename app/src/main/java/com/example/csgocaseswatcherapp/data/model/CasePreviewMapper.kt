@@ -1,6 +1,6 @@
-package com.example.csgocaseswatcherapp.data
+package com.example.csgocaseswatcherapp.data.model
 
-import com.example.csgocaseswatcherapp.domain.CasePreview
+import com.example.csgocaseswatcherapp.domain.model.CasePreview
 
 object CasePreviewMapper {
 

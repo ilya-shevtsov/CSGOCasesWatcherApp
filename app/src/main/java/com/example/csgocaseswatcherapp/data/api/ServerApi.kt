@@ -1,10 +1,8 @@
 package com.example.csgocaseswatcherapp.data.api
 
-import com.example.csgocaseswatcherapp.data.CaseDto
-import com.example.csgocaseswatcherapp.domain.Case
+import com.example.csgocaseswatcherapp.data.model.CaseDto
 import io.reactivex.Single
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 interface ServerApi {
 

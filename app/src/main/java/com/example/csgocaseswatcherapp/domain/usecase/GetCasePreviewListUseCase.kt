@@ -1,9 +1,14 @@
-package com.example.csgocaseswatcherapp.domain
+package com.example.csgocaseswatcherapp.domain.usecase
 
-import com.example.csgocaseswatcherapp.data.CaseRepository
+import com.example.csgocaseswatcherapp.domain.model.Case
+import com.example.csgocaseswatcherapp.domain.model.CasePreview
+import com.example.csgocaseswatcherapp.domain.repository.CaseRepository
 import io.reactivex.Single
+import javax.inject.Inject
 
-class GetCasePreviewListUseCase(private val caseRepository: CaseRepository) {
+class GetCasePreviewListUseCase @Inject constructor(
+    private val caseRepository: CaseRepository
+) {
 
     private val caseNameListOld = listOf(
         "Chroma%20Case",
@@ -43,24 +48,31 @@ class GetCasePreviewListUseCase(private val caseRepository: CaseRepository) {
     )
 
     private val caseList = listOf<Case>(
-        Case("Chroma Case",
+        Case(
+            "Chroma Case",
             "08.01.2015",
             "Inactive (Rare)",
-            64.23,3803,
+            64.23, 3803,
             62.54,
-            "https://api.steamapis.com/image/item/730/Chroma%20Case"),
-        Case("Chroma Case",
+            "https://api.steamapis.com/image/item/730/Chroma%20Case"
+        ),
+        Case(
+            "Chroma Case",
             "08.01.2015",
             "Inactive (Rare)",
-            2645.23,200,
+            2645.23, 200,
             2658.54,
-            "https://api.steamapis.com/image/item/730/Operation%20Bravo%20Case"),
-        Case("Chroma Case",
+            "https://api.steamapis.com/image/item/730/Operation%20Bravo%20Case"
+        ),
+        Case(
+            "Chroma Case",
             "08.01.2015",
             "Inactive (Rare)",
-            2045.23,259,
+            2045.23, 259,
             2059.66,
-            "https://api.steamapis.com/image/item/730/eSports%202013%20Case"))
+            "https://api.steamapis.com/image/item/730/eSports%202013%20Case"
+        )
+    )
 
     fun getCasePreviewList(): Single<List<CasePreview>> {
         return caseRepository.getCasePreviewList()
