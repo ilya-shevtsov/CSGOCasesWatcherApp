@@ -6,7 +6,7 @@ object CasePreviewItemMapper {
 
     fun map(casePreview: CasePreview): CasePreviewItem {
         return CasePreviewItem(
-            name = casePreview.name,
+            caseName = casePreview.name,
             lowestPrice = casePreview.lowestPrice,
             volume = casePreview.volume,
             medianPrice = casePreview.medianPrice,

@@ -20,7 +20,7 @@ class CasePreviewHolder(
 
         with(binding) {
             caseImage.setImageURI(case.imageUrl)
-            caseName.text = case.name
+            caseName.text = case.caseName
             lowestPrice.text =
                 itemView.context.getString(R.string.case_lowest_price, case.lowestPrice.toString())
             volume.text = itemView.context.getString(R.string.case_volume, case.volume.toString())

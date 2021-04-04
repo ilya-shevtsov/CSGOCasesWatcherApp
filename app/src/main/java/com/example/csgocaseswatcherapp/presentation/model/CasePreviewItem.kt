@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CasePreviewItem(
-    val name: String,
+    val caseName: String,
     val lowestPrice: Double,
     val volume: Int,
     val medianPrice: Double,

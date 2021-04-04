@@ -2,6 +2,7 @@ package com.example.csgocaseswatcherapp.core.di.module.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.csgocaseswatcherapp.presentation.view.fragments.casedetails.CaseDetailsViewModel
 import com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CasePreviewViewModel
 import dagger.Binds
 import dagger.Module
@@ -19,4 +20,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(CasePreviewViewModel::class)
     fun casePreviewViewModel(viewModel: CasePreviewViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CaseDetailsViewModel::class)
+    fun caseDetailsViewModel(viewModel: CaseDetailsViewModel): ViewModel
 }
