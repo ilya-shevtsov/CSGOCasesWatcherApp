@@ -3,7 +3,7 @@ package com.example.csgocaseswatcherapp.domain
 import com.example.csgocaseswatcherapp.data.CaseRepository
 import io.reactivex.Single
 
-class GetCaseListUseCase(private val caseRepository: CaseRepository) {
+class GetCasePreviewListUseCase(private val caseRepository: CaseRepository) {
 
     private val caseNameListOld = listOf(
         "Chroma%20Case",
