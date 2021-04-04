@@ -7,5 +7,6 @@ data class Case(
     val lowestPrice: Double,
     val volume: Int,
     val medianPrice: Double,
-    val imageUrl: String
+    val imageUrl: String,
+    val description: String
 )

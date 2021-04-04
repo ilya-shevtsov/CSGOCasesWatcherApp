@@ -47,32 +47,32 @@ class GetCasePreviewListUseCase @Inject constructor(
         "Winter%20Offensive%20Weapon%20Case"
     )
 
-    private val caseList = listOf<Case>(
-        Case(
-            "Chroma Case",
-            "08.01.2015",
-            "Inactive (Rare)",
-            64.23, 3803,
-            62.54,
-            "https://api.steamapis.com/image/item/730/Chroma%20Case"
-        ),
-        Case(
-            "Chroma Case",
-            "08.01.2015",
-            "Inactive (Rare)",
-            2645.23, 200,
-            2658.54,
-            "https://api.steamapis.com/image/item/730/Operation%20Bravo%20Case"
-        ),
-        Case(
-            "Chroma Case",
-            "08.01.2015",
-            "Inactive (Rare)",
-            2045.23, 259,
-            2059.66,
-            "https://api.steamapis.com/image/item/730/eSports%202013%20Case"
-        )
-    )
+//    private val caseList = listOf<Case>(
+//        Case(
+//            "Chroma Case",
+//            "08.01.2015",
+//            "Inactive (Rare)",
+//            64.23, 3803,
+//            62.54,
+//            "https://api.steamapis.com/image/item/730/Chroma%20Case"
+//        ),
+//        Case(
+//            "Chroma Case",
+//            "08.01.2015",
+//            "Inactive (Rare)",
+//            2645.23, 200,
+//            2658.54,
+//            "https://api.steamapis.com/image/item/730/Operation%20Bravo%20Case"
+//        ),
+//        Case(
+//            "Chroma Case",
+//            "08.01.2015",
+//            "Inactive (Rare)",
+//            2045.23, 259,
+//            2059.66,
+//            "https://api.steamapis.com/image/item/730/eSports%202013%20Case"
+//        )
+//    )
 
     fun getCasePreviewList(): Single<List<CasePreview>> {
         return caseRepository.getCasePreviewList()

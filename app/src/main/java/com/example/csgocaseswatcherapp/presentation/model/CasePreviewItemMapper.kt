@@ -10,7 +10,10 @@ object CasePreviewItemMapper {
             lowestPrice = case.lowestPrice,
             volume = case.volume,
             medianPrice = case.medianPrice,
-            imageUrl = case.imageUrl
+            imageUrl = case.imageUrl,
+            releaseDate = case.releaseDate,
+            dropStatus = case.dropStatus,
+            description = case.description
         )
     }
 }

@@ -28,9 +28,11 @@ class CaseDetailsFragment : Fragment(R.layout.fragment_case_details) {
             medianPrice.text =
                 getString(R.string.case_median_price, args.currentCase.medianPrice.toString())
             volume.text = getString(R.string.case_volume, args.currentCase.volume.toString())
+            releaseDate.text = getString(R.string.case_release_date, args.currentCase.releaseDate)
+            dropStatus.text = getString(R.string.case_drop_status, args.currentCase.dropStatus)
             caseImage.setImageURI(args.currentCase.imageUrl)
+            description.text = args.currentCase.description
         }
         return binding.root
     }
-
 }

@@ -27,6 +27,8 @@ data class CaseDto(
     val medianPrice: Double,
 
     @SerializedName("imageUrl")
-    val imageUrl: String
+    val imageUrl: String,
 
+    @SerializedName("description")
+    val description: String
 ) : Serializable
