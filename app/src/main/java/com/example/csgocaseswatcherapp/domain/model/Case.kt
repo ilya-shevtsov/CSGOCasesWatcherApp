@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.domain
+package com.example.csgocaseswatcherapp.domain.model
 
 data class Case(
     val name: String,
@@ -7,5 +7,6 @@ data class Case(
     val lowestPrice: Double,
     val volume: Int,
     val medianPrice: Double,
-    val imageUrl: String
+    val imageUrl: String,
+    val description: String
 )

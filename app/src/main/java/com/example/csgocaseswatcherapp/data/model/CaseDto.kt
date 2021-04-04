@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.data
+package com.example.csgocaseswatcherapp.data.model
 
 import java.io.Serializable
 import com.google.gson.annotations.SerializedName
@@ -27,6 +27,8 @@ data class CaseDto(
     val medianPrice: Double,
 
     @SerializedName("imageUrl")
-    val imageUrl: String
+    val imageUrl: String,
 
+    @SerializedName("description")
+    val description: String
 ) : Serializable

@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.databinding.FragmentStartBinding
 
-
 class StartFragment : Fragment(R.layout.fragment_start) {
 
     private lateinit var binding: FragmentStartBinding

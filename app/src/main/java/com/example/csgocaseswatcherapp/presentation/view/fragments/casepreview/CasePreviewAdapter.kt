@@ -11,7 +11,6 @@ class CasePreviewAdapter constructor(
     private val onItemClicked: (case: CasePreviewItem) -> Unit
 ) : RecyclerView.Adapter<CasePreviewHolder>() {
 
-
     private val caseList: MutableList<CasePreviewItem> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CasePreviewHolder {
