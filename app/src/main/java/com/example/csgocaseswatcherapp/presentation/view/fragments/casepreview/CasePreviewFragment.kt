@@ -57,9 +57,16 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview) {
             caseRecyclerView.adapter = adapter
 
             viewModel.viewStateLiveData.observe(viewLifecycleOwner) { state ->
-                errorView.root.isVisible = state.isError
-                caseRecyclerView.isVisible = !state.isError
-                adapter.addData(state.casePreviewItemList, true)
+
+                caseRecyclerView.isVisible = state is CasePreviewViewState.Success
+                errorView.root.isVisible = state is CasePreviewViewState.Error
+
+                when (state) {
+                    is CasePreviewViewState.Success -> {
+                        adapter.addData(state.casePreviewItemList, true)
+                    }
+                    else -> Unit
+                }
             }
         }
         viewModel.getCaseList().disposeOnDestroy(viewLifecycleOwner)

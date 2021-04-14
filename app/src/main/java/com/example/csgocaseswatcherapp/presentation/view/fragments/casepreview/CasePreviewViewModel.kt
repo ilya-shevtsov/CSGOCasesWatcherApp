@@ -34,17 +34,13 @@ class CasePreviewViewModel @Inject constructor(
     }
 
     private fun showError() {
-        val state = CasePreviewViewState(
-            casePreviewItemList = emptyList(),
-            isError = true
-        )
+        val state = CasePreviewViewState.Error
         viewStateLiveData.postValue(state)
     }
 
     private fun showCaseList(caseList: List<CasePreview>) {
-        val state = CasePreviewViewState(
+        val state = CasePreviewViewState.Success(
             casePreviewItemList = caseList.map(CasePreviewItemMapper::map),
-            isError = false
         )
         viewStateLiveData.postValue(state)
     }
