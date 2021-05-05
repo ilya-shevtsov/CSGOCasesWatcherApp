@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rowLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/caseName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="CaseName" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/caseImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toStartOf="@id/monthlyAvgReturnInPercent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caseName"
+        fresco:actualImageScaleType="fitCenter"
+        tools:background="@color/black" />
+
+
+    <TextView
+        android:id="@+id/monthlyAvgReturnInPercent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@id/monthlyAvgReturnInRub"
+        app:layout_constraintStart_toEndOf="@id/caseImage"
+        app:layout_constraintTop_toBottomOf="@+id/caseName"
+        tools:text="@string/monthly_avg_return_in_percent" />
+
+    <TextView
+        android:id="@+id/monthlyAvgReturnInRub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/caseImage"
+        app:layout_constraintStart_toEndOf="@id/caseImage"
+        app:layout_constraintTop_toBottomOf="@+id/monthlyAvgReturnInPercent"
+        tools:text="@string/monthly_avg_return_in_rub" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/caseImage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

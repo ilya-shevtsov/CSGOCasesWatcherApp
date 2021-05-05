@@ -28,7 +28,7 @@ class CaseOverviewViewModel @Inject constructor(
                 },
                 onError = {
                     showError()
-                    Log.e("M_CasesPreviewFragment.getCaseList", "$it")
+                    Log.e("M_CasesOverviewFragment.getCaseList", "$it")
                 }
             )
     }
