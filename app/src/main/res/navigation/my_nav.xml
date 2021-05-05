@@ -56,7 +56,8 @@
     <fragment
         android:id="@+id/caseAnalyticsFragment"
         android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.caseanalytics.CaseAnalyticsFragment"
-        android:label="Case Analytics ">
+        android:label="Case Analytics "
+        tools:layout="@layout/fragment_case_analytics">
         <action
             android:id="@+id/action_caseAnalyticsFragment_to_startFragment"
             app:destination="@id/startFragment" />
