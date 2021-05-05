@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.view.fragments.casedetails
+package com.example.csgocaseswatcherapp.presentation.view.fragments.caseoverviewdetails
 
 data class CaseDetailsViewState(
     val caseName: String,

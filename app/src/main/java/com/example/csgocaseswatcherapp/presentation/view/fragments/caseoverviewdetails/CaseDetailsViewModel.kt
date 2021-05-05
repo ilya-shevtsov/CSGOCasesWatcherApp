@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.view.fragments.casedetails
+package com.example.csgocaseswatcherapp.presentation.view.fragments.caseoverviewdetails
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
