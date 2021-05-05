@@ -1,8 +1,8 @@
 package com.example.csgocaseswatcherapp.data.repository
 
-import com.example.csgocaseswatcherapp.data.model.CaseOverviewMapper
+import com.example.csgocaseswatcherapp.data.model.caseoverview.CaseOverviewMapper
 import com.example.csgocaseswatcherapp.data.api.ApiTools
-import com.example.csgocaseswatcherapp.domain.model.CaseOverview
+import com.example.csgocaseswatcherapp.domain.model.caseoverview.CaseOverview
 import com.example.csgocaseswatcherapp.domain.repository.CaseRepository
 import io.reactivex.Single
 import javax.inject.Inject

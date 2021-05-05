@@ -2,6 +2,7 @@ package com.example.csgocaseswatcherapp.core.di.module.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.csgocaseswatcherapp.presentation.view.fragments.caseanalytics.CaseAnalyticsViewModel
 import com.example.csgocaseswatcherapp.presentation.view.fragments.casedetails.CaseDetailsViewModel
 import com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CaseOverviewViewModel
 import dagger.Binds

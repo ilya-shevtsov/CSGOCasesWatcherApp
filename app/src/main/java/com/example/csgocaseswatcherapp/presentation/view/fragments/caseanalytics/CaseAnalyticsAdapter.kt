@@ -6,8 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.presentation.model.caseanalyticsitem.CaseAnalyticsItem
-import com.example.csgocaseswatcherapp.presentation.model.caseoverviewitem.CaseOverviewItem
-import com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CaseOverviewHolder
 
 class CaseAnalyticsAdapter constructor(
     private val onItemClicked: (case: CaseAnalyticsItem) -> Unit

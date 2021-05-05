@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.core.CaseWatcherApplication
@@ -25,13 +26,17 @@ class CaseAnalyticsFragment : Fragment(R.layout.fragment_case_analytics) {
 
     private lateinit var viewModel: CaseAnalyticsViewModel
 
-    private val adapter: CaseAnalyticsAdapter = CaseAnalyticsAdapter()
+    private val adapter: CaseAnalyticsAdapter = CaseAnalyticsAdapter(onItemClicked = {})
+//    (onItemClicked = { case ->
+//        val action = CaseAnalyticsFragmentDirections.action
+//        findNavController().navigate(action)
+//    })
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCaseAnalyticsBinding.inflate(inflater, container, false)
 
         viewModel = ViewModelProvider(this, viewModelFactory)
@@ -49,17 +54,17 @@ class CaseAnalyticsFragment : Fragment(R.layout.fragment_case_analytics) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        with(binding){
+        with(binding) {
             caseAnalyticsRecyclerView.layoutManager = LinearLayoutManager(activity)
             caseAnalyticsRecyclerView.adapter = adapter
 
             viewModel.viewStateLiveData.observe(viewLifecycleOwner) { state ->
-                caseAnalyticsRecyclerView.isVisible = state is  CaseAnalyticsViewState.Success
+                caseAnalyticsRecyclerView.isVisible = state is CaseAnalyticsViewState.Success
                 errorView.root.isVisible = state is CaseAnalyticsViewState.Error
 
                 when (state) {
                     is CaseAnalyticsViewState.Success -> {
-                        adapter.addData(state.caseAnalyticsList, true)
+                        adapter.addData(state.caseAnalyticsItemList, true)
                     }
                     else -> Unit
                 }

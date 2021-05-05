@@ -34,12 +34,12 @@ class CaseAnalyticsViewModel @Inject constructor(
         viewStateLiveData.postValue(state)
     }
 
-    private fun showCaseAnalyticsList(caseAnalyticsList: List<CaseAnalytics>) {
-        val state = CaseAnalyticsViewState.Success(
-            caseAnalyticsList = caseAnalyticsList.map(CaseAnalyticsItemMapper::map),
-        )
-        viewStateLiveData.postValue(state)
-    }
+//    private fun showCaseAnalyticsList(caseAnalyticsList: List<CaseAnalytics>) {
+//        val state = CaseAnalyticsViewState.Success(
+//            caseAnalyticsList = caseAnalyticsList.map(CaseAnalyticsItemMapper::map),
+//        )
+//        viewStateLiveData.postValue(state)
+//    }
 
 
 }
