@@ -15,8 +15,8 @@
     <string name="case_drop_status">Drop Status: %s</string>
 
     // case analytics
-    <string name="monthly_avg_return_in_percent">Monthly Return in %: %s</string>
-    <string name="monthly_avg_return_in_rub">Monthly Return in RUB: %s</string>
+    <string name="monthly_avg_return_in_percent">Monthly percentage return: %s</string>
+    <string name="monthly_avg_return_in_rub">Monthly return in RUB: %s</string>
 
     // common
     <string name="hello_blank_fragment">Hello blank fragment</string>

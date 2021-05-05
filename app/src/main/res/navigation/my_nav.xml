@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/caseOverviewFragment"
-        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CaseOverviewFragment"
+        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.caseoverview.CaseOverviewFragment"
         android:label="Case Overview"
         tools:layout="@layout/fragment_case_overview">
         <action
@@ -51,11 +51,11 @@
             app:destination="@id/caseOverviewFragment" />
         <argument
             android:name="currentCase"
-            app:argType="com.example.csgocaseswatcherapp.presentation.model.CaseOverviewItem" />
+            app:argType="com.example.csgocaseswatcherapp.presentation.model.caseoverviewitem.CaseOverviewItem" />
     </fragment>
     <fragment
         android:id="@+id/caseAnalyticsFragment"
-        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CaseAnalyticsFragment"
+        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.caseanalytics.CaseAnalyticsFragment"
         android:label="Case Analytics ">
         <action
             android:id="@+id/action_caseAnalyticsFragment_to_startFragment"

@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview
+package com.example.csgocaseswatcherapp.presentation.view.fragments.caseoverview
 
 import com.example.csgocaseswatcherapp.presentation.model.caseoverviewitem.CaseOverviewItem
 

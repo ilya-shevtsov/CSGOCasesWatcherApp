@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview
+package com.example.csgocaseswatcherapp.presentation.view.fragments.caseoverview
 
 import android.content.Context
 import android.os.Bundle
@@ -27,7 +27,7 @@ class CaseOverviewFragment : Fragment(R.layout.fragment_case_overview) {
 
     private val adapter: CaseOverviewAdapter = CaseOverviewAdapter(onItemClicked = { case ->
         val action =
-            CaseOverviewFragmentDirections.actionCaseOverviewFragmentToCaseDetailsFragment2(case)
+            CaseOverviewFragmentDirections.actionCaseOverviewFragmentToCaseDetailsFragment(case)
         findNavController().navigate(action)
     })
 

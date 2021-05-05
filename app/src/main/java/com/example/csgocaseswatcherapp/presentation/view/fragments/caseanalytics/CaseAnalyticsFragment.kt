@@ -8,13 +8,11 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.core.CaseWatcherApplication
 import com.example.csgocaseswatcherapp.core.disposeOnDestroy
 import com.example.csgocaseswatcherapp.databinding.FragmentCaseAnalyticsBinding
-import com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CaseOverviewViewState
 import javax.inject.Inject
 
 class CaseAnalyticsFragment : Fragment(R.layout.fragment_case_analytics) {

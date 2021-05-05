@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview
+package com.example.csgocaseswatcherapp.presentation.view.fragments.caseoverview
 
 import android.view.LayoutInflater
 import android.view.View

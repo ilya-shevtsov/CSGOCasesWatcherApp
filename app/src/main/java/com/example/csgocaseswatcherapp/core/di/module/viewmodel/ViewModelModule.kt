@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.csgocaseswatcherapp.presentation.view.fragments.caseanalytics.CaseAnalyticsViewModel
 import com.example.csgocaseswatcherapp.presentation.view.fragments.casedetails.CaseDetailsViewModel
-import com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CaseOverviewViewModel
+import com.example.csgocaseswatcherapp.presentation.view.fragments.caseoverview.CaseOverviewViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -30,7 +30,7 @@ interface ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(CaseAnalyticsViewModel::class)
-    fun caseAnalyticsViewModel(viewModel: CaseOverviewViewModel): ViewModel
+    fun caseAnalyticsViewModel(viewModel: CaseAnalyticsViewModel): ViewModel
 
 
 

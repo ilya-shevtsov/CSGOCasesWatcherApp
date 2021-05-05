@@ -3,19 +3,23 @@ package com.example.csgocaseswatcherapp.presentation.view.fragments.caseanalytic
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.csgocaseswatcherapp.domain.model.caseanalytics.CaseAnalytics
+import com.example.csgocaseswatcherapp.domain.usecase.GetCaseAnalyticsListUseCase
+import com.example.csgocaseswatcherapp.presentation.model.caseanalyticsitem.CaseAnalyticsItemMapper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
+import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 
 class CaseAnalyticsViewModel @Inject constructor(
     private val getCaseAnalyticsListUseCase: GetCaseAnalyticsListUseCase
-):ViewModel() {
+): ViewModel() {
 
     val viewStateLiveData = MutableLiveData<CaseAnalyticsViewState>()
 
-    fun getCaseAnalyticsList():Disposable{
+    fun getCaseAnalyticsList(): Disposable {
         return getCaseAnalyticsListUseCase.getCaseAnalyticsList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -34,12 +38,10 @@ class CaseAnalyticsViewModel @Inject constructor(
         viewStateLiveData.postValue(state)
     }
 
-//    private fun showCaseAnalyticsList(caseAnalyticsList: List<CaseAnalytics>) {
-//        val state = CaseAnalyticsViewState.Success(
-//            caseAnalyticsList = caseAnalyticsList.map(CaseAnalyticsItemMapper::map),
-//        )
-//        viewStateLiveData.postValue(state)
-//    }
-
-
+    private fun showCaseAnalyticsList(caseAnalyticsList: List<CaseAnalytics>) {
+        val state = CaseAnalyticsViewState.Success(
+            caseAnalyticsItemList = caseAnalyticsList.map(CaseAnalyticsItemMapper::map),
+        )
+        viewStateLiveData.postValue(state)
+    }
 }

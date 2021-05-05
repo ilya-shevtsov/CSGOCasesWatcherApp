@@ -1,6 +1,8 @@
 package com.example.csgocaseswatcherapp.core.di.module
 
+import com.example.csgocaseswatcherapp.data.repository.CaseAnalyticsRepositoryImpl
 import com.example.csgocaseswatcherapp.data.repository.CaseRepositoryImpl
+import com.example.csgocaseswatcherapp.domain.repository.CaseAnalyticsRepository
 import com.example.csgocaseswatcherapp.domain.repository.CaseRepository
 import dagger.Binds
 import dagger.Module
@@ -12,4 +14,8 @@ interface DataModule {
     @Binds
     @Singleton
     fun caseRepository(impl: CaseRepositoryImpl): CaseRepository
+
+    @Binds
+    @Singleton
+    fun caseAnalyticsRepository(impl: CaseAnalyticsRepositoryImpl): CaseAnalyticsRepository
 }
