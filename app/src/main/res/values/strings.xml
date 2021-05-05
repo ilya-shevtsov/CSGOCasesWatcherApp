@@ -17,6 +17,12 @@
     // case analytics
     <string name="monthly_avg_return_in_percent">Monthly percentage return: %s</string>
     <string name="monthly_avg_return_in_rub">Monthly return in RUB: %s</string>
+    <string name="monthly_standard_deviation">Monthly standard deviation: %s</string>
+    <string name="monthly_sharp_ratio">Monthly Sharp ratio: %s</string>
+    <string name="daily_avg_return_in_percent">Daily percentage return: %s</string>
+    <string name="daily_avg_return_in_rub">Daily return in RUB: %s</string>
+    <string name="daily_standard_deviation">Daily standard deviation: %s</string>
+    <string name="daily_sharp_ratio">Daily Sharp ratio: %s</string>
 
     // common
     <string name="hello_blank_fragment">Hello blank fragment</string>

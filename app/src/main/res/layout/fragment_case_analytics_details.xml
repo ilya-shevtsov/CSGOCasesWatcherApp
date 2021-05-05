@@ -30,112 +30,73 @@
 
 
     <TextView
-        android:id="@+id/lowestPrice"
+        android:id="@+id/monthlyAvgReturnInPercentDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
-        fresco:layout_constraintBottom_toTopOf="@id/volume"
         fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toEndOf="@id/caseImage"
-        fresco:layout_constraintTop_toTopOf="@id/caseImage"
-        tools:text="@string/case_lowest_price" />
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@id/separatorOne"
+        tools:text="@string/monthly_avg_return_in_percent" />
 
     <TextView
-        android:id="@+id/volume"
+        android:id="@+id/monthlyAvgReturnInRubDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
-        fresco:layout_constraintBottom_toTopOf="@id/medianPrice"
         fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toEndOf="@id/caseImage"
-        fresco:layout_constraintTop_toBottomOf="@id/lowestPrice"
-        tools:text="@string/case_volume" />
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@id/monthlyAvgReturnInPercentDetails"
+        tools:text="@string/monthly_avg_return_in_rub" />
 
     <TextView
-        android:id="@+id/medianPrice"
+        android:id="@+id/monthlyStandardDeviationDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
-        fresco:layout_constraintBottom_toTopOf="@id/releaseDate"
         fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toEndOf="@id/caseImage"
-        fresco:layout_constraintTop_toBottomOf="@id/volume"
-        tools:text="@string/case_median_price" />
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@+id/monthlyAvgReturnInRubDetails"
+        tools:text="@string/monthly_standard_deviation" />
 
     <TextView
-        android:id="@+id/releaseDate"
+        android:id="@+id/monthlySharpRatioDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
-        fresco:layout_constraintBottom_toTopOf="@id/dropStatus"
         fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toEndOf="@id/caseImage"
-        fresco:layout_constraintTop_toBottomOf="@id/medianPrice"
-        tools:text="@string/case_release_date" />
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@+id/monthlyStandardDeviationDetails"
+        tools:text="@string/monthly_sharp_ratio" />
 
-    <TextView
-        android:id="@+id/dropStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textSize="16sp"
-        fresco:layout_constraintBottom_toBottomOf="@id/caseImage"
-        fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toEndOf="@id/caseImage"
-        fresco:layout_constraintTop_toBottomOf="@id/releaseDate"
-        tools:text="@string/case_drop_status" />
 
     <View
-        android:id="@+id/descriptionSeparatorOne"
+        android:id="@+id/separatorOne"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:background="@color/white"
+        fresco:layout_constraintBottom_toTopOf="@id/monthlyAvgReturnInPercentDetails"
         fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toStartOf="parent"
-        fresco:layout_constraintBottom_toTopOf="@id/description"
-        fresco:layout_constraintTop_toBottomOf="@id/caseImage" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:textSize="16sp"
-        fresco:layout_constraintBottom_toTopOf="@+id/descriptionSeparatorTwo"
-        fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintHorizontal_bias="0.0"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@id/caseImage" />
 
     <View
-        android:id="@+id/descriptionSeparatorTwo"
+        android:id="@+id/separatorTwo"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:background="@color/white"
-        fresco:layout_constraintBottom_toTopOf="@id/grid"
-        fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toStartOf="parent"
-        fresco:layout_constraintTop_toBottomOf="@id/description" />
-
-
-    <GridLayout
-        android:id="@+id/grid"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:columnCount="6"
-        android:rowCount="3"
         fresco:layout_constraintBottom_toBottomOf="parent"
         fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toStartOf="parent"
-        fresco:layout_constraintTop_toBottomOf="@id/descriptionSeparatorTwo"/>
+
+        fresco:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
