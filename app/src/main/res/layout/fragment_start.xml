@@ -2,10 +2,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/StartFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/StartFragment"
     tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/casePreviewButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/case_preview"
+        app:layout_constraintBottom_toTopOf="@+id/caseAnalyticsButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/caseAnalyticsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/analytics"
+        app:layout_constraintBottom_toTopOf="@+id/portfolioButton"
+        app:layout_constraintTop_toBottomOf="@+id/casePreviewButton" />
 
     <Button
         android:id="@+id/portfolioButton"
@@ -13,20 +31,6 @@
         android:layout_height="wrap_content"
         android:text="@string/portfolio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/casePreviewButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/case_preview"
-        app:layout_constraintBottom_toTopOf="@+id/portfolioButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/caseAnalyticsButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
