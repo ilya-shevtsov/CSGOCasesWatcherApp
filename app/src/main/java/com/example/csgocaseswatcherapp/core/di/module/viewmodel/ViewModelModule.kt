@@ -25,4 +25,12 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(CaseDetailsViewModel::class)
     fun caseDetailsViewModel(viewModel: CaseDetailsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CaseAnalyticsViewModel::class)
+    fun caseAnalyticsViewModel(viewModel: CaseOverviewViewModel): ViewModel
+
+
+
 }

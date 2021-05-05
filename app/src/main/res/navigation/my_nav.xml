@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_startFragment_to_portfolioFragment"
             app:destination="@id/portfolioFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_caseAnalyticsFragment"
+            app:destination="@id/caseAnalyticsFragment" />
     </fragment>
     <fragment
         android:id="@+id/caseOverviewFragment"
@@ -23,10 +26,10 @@
         android:label="Case Overview"
         tools:layout="@layout/fragment_case_overview">
         <action
-            android:id="@+id/action_caseOverviewFragment_to_caseDetailsFragment2"
+            android:id="@+id/action_caseOverviewFragment_to_caseDetailsFragment"
             app:destination="@id/caseDetailsFragment" />
         <action
-            android:id="@+id/action_caseOverviewFragment_to_startFragment2"
+            android:id="@+id/action_caseOverviewFragment_to_startFragment"
             app:destination="@id/startFragment" />
     </fragment>
     <fragment
@@ -49,5 +52,13 @@
         <argument
             android:name="currentCase"
             app:argType="com.example.csgocaseswatcherapp.presentation.model.CaseOverviewItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/caseAnalyticsFragment"
+        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CaseAnalyticsFragment"
+        android:label="Case Analytics ">
+        <action
+            android:id="@+id/action_caseAnalyticsFragment_to_startFragment"
+            app:destination="@id/startFragment" />
     </fragment>
 </navigation>

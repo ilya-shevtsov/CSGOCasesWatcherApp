@@ -38,7 +38,8 @@ class CaseOverviewFragment : Fragment(R.layout.fragment_case_overview) {
     ): View {
         binding = FragmentCaseOverviewBinding.inflate(inflater, container, false)
 
-        viewModel = ViewModelProvider(this, viewModelFactory).get(CaseOverviewViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory)
+            .get(CaseOverviewViewModel::class.java)
 
         return binding.root
     }
