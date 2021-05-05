@@ -35,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
+        fresco:layout_constraintBottom_toTopOf="@+id/monthlyAvgReturnInRubDetails"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@id/separatorOne"
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
+        fresco:layout_constraintBottom_toTopOf="@+id/monthlyStandardDeviationDetails"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@id/monthlyAvgReturnInPercentDetails"
@@ -57,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
+        fresco:layout_constraintBottom_toTopOf="@+id/monthlySharpRatioDetails"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@+id/monthlyAvgReturnInRubDetails"
@@ -68,10 +71,59 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
+        fresco:layout_constraintBottom_toTopOf="@+id/dailyAvgReturnInPercentDetails"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@+id/monthlyStandardDeviationDetails"
         tools:text="@string/monthly_sharp_ratio" />
+
+    <TextView
+        android:id="@+id/dailyAvgReturnInPercentDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        fresco:layout_constraintBottom_toTopOf="@+id/dailyAvgReturnInRubDetails"
+        fresco:layout_constraintEnd_toEndOf="parent"
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@id/monthlySharpRatioDetails"
+        tools:text="@string/daily_avg_return_in_percent" />
+
+    <TextView
+        android:id="@+id/dailyAvgReturnInRubDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        fresco:layout_constraintBottom_toTopOf="@+id/dailyStandardDeviationDetails"
+        fresco:layout_constraintEnd_toEndOf="parent"
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@id/dailyAvgReturnInPercentDetails"
+        tools:text="@string/daily_avg_return_in_rub" />
+
+    <TextView
+        android:id="@+id/dailyStandardDeviationDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        fresco:layout_constraintBottom_toTopOf="@+id/dailySharpRatioDetails"
+        fresco:layout_constraintEnd_toEndOf="parent"
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@+id/dailyAvgReturnInRubDetails"
+        tools:text="@string/daily_standard_deviation" />
+
+    <TextView
+        android:id="@+id/dailySharpRatioDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        fresco:layout_constraintBottom_toTopOf="@id/separatorTwo"
+        fresco:layout_constraintEnd_toEndOf="parent"
+        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintTop_toBottomOf="@+id/dailyStandardDeviationDetails"
+        tools:text="@string/daily_sharp_ratio" />
 
 
     <View
@@ -95,7 +147,6 @@
         android:background="@color/white"
         fresco:layout_constraintBottom_toBottomOf="parent"
         fresco:layout_constraintEnd_toEndOf="parent"
-
         fresco:layout_constraintStart_toStartOf="parent" />
 
 
