@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.core.CaseWatcherApplication
+import com.example.csgocaseswatcherapp.core.disposeOnDestroy
 import com.example.csgocaseswatcherapp.databinding.FragmentCaseAnalyticsBinding
+import com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CaseOverviewViewState
 import javax.inject.Inject
 
 class CaseAnalyticsFragment : Fragment(R.layout.fragment_case_analytics) {
@@ -49,7 +52,20 @@ class CaseAnalyticsFragment : Fragment(R.layout.fragment_case_analytics) {
         with(binding){
             caseAnalyticsRecyclerView.layoutManager = LinearLayoutManager(activity)
             caseAnalyticsRecyclerView.adapter = adapter
+
+            viewModel.viewStateLiveData.observe(viewLifecycleOwner) { state ->
+                caseAnalyticsRecyclerView.isVisible = state is  CaseAnalyticsViewState.Success
+                errorView.root.isVisible = state is CaseAnalyticsViewState.Error
+
+                when (state) {
+                    is CaseAnalyticsViewState.Success -> {
+                        adapter.addData(state.caseAnalyticsList, true)
+                    }
+                    else -> Unit
+                }
+            }
         }
+        viewModel.getCaseAnalyticsList().disposeOnDestroy(viewLifecycleOwner)
     }
 
 }

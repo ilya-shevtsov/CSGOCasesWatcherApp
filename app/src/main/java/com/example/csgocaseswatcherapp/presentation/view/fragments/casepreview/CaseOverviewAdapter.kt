@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.presentation.model.CaseOverviewItem
+import com.example.csgocaseswatcherapp.presentation.model.caseoverviewitem.CaseOverviewItem
 
 class CaseOverviewAdapter constructor(
     private val onItemClicked: (case: CaseOverviewItem) -> Unit
@@ -26,7 +26,6 @@ class CaseOverviewAdapter constructor(
 
     override fun getItemCount(): Int {
         return caseList.size
-
     }
 
     fun addData(data: List<CaseOverviewItem>, refresh: Boolean) {

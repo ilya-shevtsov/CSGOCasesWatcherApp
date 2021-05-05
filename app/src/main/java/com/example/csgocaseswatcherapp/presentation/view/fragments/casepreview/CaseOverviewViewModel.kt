@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.csgocaseswatcherapp.domain.model.CaseOverview
 import com.example.csgocaseswatcherapp.domain.usecase.GetCaseOverviewListUseCase
-import com.example.csgocaseswatcherapp.presentation.model.CaseOverviewItemMapper
+import com.example.csgocaseswatcherapp.presentation.model.caseoverviewitem.CaseOverviewItemMapper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy

@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.model
+package com.example.csgocaseswatcherapp.presentation.model.caseoverviewitem
 
 import com.example.csgocaseswatcherapp.domain.model.CaseOverview
 

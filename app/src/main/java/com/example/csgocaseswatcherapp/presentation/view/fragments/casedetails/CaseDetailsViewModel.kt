@@ -2,7 +2,7 @@ package com.example.csgocaseswatcherapp.presentation.view.fragments.casedetails
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.csgocaseswatcherapp.presentation.model.CaseOverviewItem
+import com.example.csgocaseswatcherapp.presentation.model.caseoverviewitem.CaseOverviewItem
 import javax.inject.Inject
 
 class CaseDetailsViewModel @Inject constructor(

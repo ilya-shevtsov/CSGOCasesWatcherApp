@@ -1,6 +1,6 @@
 package com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview
 
-import com.example.csgocaseswatcherapp.presentation.model.CaseOverviewItem
+import com.example.csgocaseswatcherapp.presentation.model.caseoverviewitem.CaseOverviewItem
 
 sealed class CaseOverviewViewState {
 
