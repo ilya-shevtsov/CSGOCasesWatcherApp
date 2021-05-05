@@ -1,8 +1,8 @@
 package com.example.csgocaseswatcherapp.domain.repository
 
-import com.example.csgocaseswatcherapp.domain.model.CasePreview
+import com.example.csgocaseswatcherapp.domain.model.CaseOverview
 import io.reactivex.Single
 
 interface CaseRepository {
-    fun getCasePreviewList(): Single<List<CasePreview>>
+    fun getCaseOverviewList(): Single<List<CaseOverview>>
 }

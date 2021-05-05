@@ -4,18 +4,18 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.databinding.ItemCaseBinding
-import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem
+import com.example.csgocaseswatcherapp.presentation.model.CaseOverviewItem
 import kotlinx.android.extensions.LayoutContainer
 
-class CasePreviewHolder(
+class CaseOverviewHolder(
     override val containerView: View
 ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
     private val binding: ItemCaseBinding = ItemCaseBinding.bind(containerView)
 
     fun bind(
-        case: CasePreviewItem,
-        onItemClicked: (case: CasePreviewItem) -> Unit
+        case: CaseOverviewItem,
+        onItemClicked: (case: CaseOverviewItem) -> Unit
     ) {
 
         with(binding) {

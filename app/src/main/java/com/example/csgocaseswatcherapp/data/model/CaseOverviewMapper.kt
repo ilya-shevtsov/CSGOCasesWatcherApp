@@ -1,13 +1,13 @@
 package com.example.csgocaseswatcherapp.data.model
 
-import com.example.csgocaseswatcherapp.domain.model.CasePreview
+import com.example.csgocaseswatcherapp.domain.model.CaseOverview
 
-object CasePreviewMapper {
+object CaseOverviewMapper {
 
     fun map(
         caseDto: CaseDto,
-    ): CasePreview {
-        return CasePreview(
+    ): CaseOverview {
+        return CaseOverview(
             name = caseDto.name,
             lowestPrice = caseDto.lowestPrice,
             volume = caseDto.volume,

@@ -5,22 +5,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.csgocaseswatcherapp.R
-import com.example.csgocaseswatcherapp.presentation.model.CasePreviewItem
+import com.example.csgocaseswatcherapp.presentation.model.CaseOverviewItem
 
-class CasePreviewAdapter constructor(
-    private val onItemClicked: (case: CasePreviewItem) -> Unit
-) : RecyclerView.Adapter<CasePreviewHolder>() {
+class CaseOverviewAdapter constructor(
+    private val onItemClicked: (case: CaseOverviewItem) -> Unit
+) : RecyclerView.Adapter<CaseOverviewHolder>() {
 
-    private val caseList: MutableList<CasePreviewItem> = mutableListOf()
+    private val caseList: MutableList<CaseOverviewItem> = mutableListOf()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CasePreviewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CaseOverviewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view: View = inflater.inflate(R.layout.item_case, parent, false)
-        return CasePreviewHolder(view)
+        return CaseOverviewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CasePreviewHolder, position: Int) {
-        val case: CasePreviewItem = caseList[position]
+    override fun onBindViewHolder(holder: CaseOverviewHolder, position: Int) {
+        val case: CaseOverviewItem = caseList[position]
         holder.bind(case, onItemClicked)
     }
 
@@ -29,7 +29,7 @@ class CasePreviewAdapter constructor(
 
     }
 
-    fun addData(data: List<CasePreviewItem>, refresh: Boolean) {
+    fun addData(data: List<CaseOverviewItem>, refresh: Boolean) {
         if (refresh) {
             caseList.clear()
         }

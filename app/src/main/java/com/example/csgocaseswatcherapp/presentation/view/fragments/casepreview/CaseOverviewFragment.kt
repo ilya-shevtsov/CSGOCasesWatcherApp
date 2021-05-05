@@ -13,21 +13,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.*
 import com.example.csgocaseswatcherapp.core.CaseWatcherApplication
 import com.example.csgocaseswatcherapp.core.disposeOnDestroy
-import com.example.csgocaseswatcherapp.databinding.FragmentCasePreviewBinding
+import com.example.csgocaseswatcherapp.databinding.FragmentCaseOverviewBinding
 import javax.inject.Inject
 
-class CasePreviewFragment : Fragment(R.layout.fragment_case_preview) {
+class CaseOverviewFragment : Fragment(R.layout.fragment_case_overview) {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private lateinit var binding: FragmentCasePreviewBinding
+    private lateinit var binding: FragmentCaseOverviewBinding
 
-    private lateinit var viewModel: CasePreviewViewModel
+    private lateinit var viewModel: CaseOverviewViewModel
 
-    private val adapter: CasePreviewAdapter = CasePreviewAdapter(onItemClicked = { case ->
+    private val adapter: CaseOverviewAdapter = CaseOverviewAdapter(onItemClicked = { case ->
         val action =
-            CasePreviewFragmentDirections.actionCasePreviewFragmentToCaseDetailsFragment(case)
+            CaseOverviewFragmentDirections.actionCaseOverviewFragmentToCaseDetailsFragment2(case)
         findNavController().navigate(action)
     })
 
@@ -36,9 +36,9 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCasePreviewBinding.inflate(inflater, container, false)
+        binding = FragmentCaseOverviewBinding.inflate(inflater, container, false)
 
-        viewModel = ViewModelProvider(this, viewModelFactory).get(CasePreviewViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(CaseOverviewViewModel::class.java)
 
         return binding.root
     }
@@ -58,12 +58,12 @@ class CasePreviewFragment : Fragment(R.layout.fragment_case_preview) {
 
             viewModel.viewStateLiveData.observe(viewLifecycleOwner) { state ->
 
-                caseRecyclerView.isVisible = state is CasePreviewViewState.Success
-                errorView.root.isVisible = state is CasePreviewViewState.Error
+                caseRecyclerView.isVisible = state is CaseOverviewViewState.Success
+                errorView.root.isVisible = state is CaseOverviewViewState.Error
 
                 when (state) {
-                    is CasePreviewViewState.Success -> {
-                        adapter.addData(state.casePreviewItemList, true)
+                    is CaseOverviewViewState.Success -> {
+                        adapter.addData(state.caseOverviewItemList, true)
                     }
                     else -> Unit
                 }

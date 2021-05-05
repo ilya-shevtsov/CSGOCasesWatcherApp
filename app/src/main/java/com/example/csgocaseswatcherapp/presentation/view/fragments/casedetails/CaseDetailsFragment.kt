@@ -6,13 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.core.CaseWatcherApplication
 import com.example.csgocaseswatcherapp.databinding.FragmentCaseDetailsBinding
-import com.example.csgocaseswatcherapp.presentation.view.fragments.casepreview.CasePreviewViewModel
 import javax.inject.Inject
 
 class CaseDetailsFragment : Fragment(R.layout.fragment_case_details) {
