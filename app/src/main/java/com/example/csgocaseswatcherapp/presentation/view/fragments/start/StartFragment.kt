@@ -8,26 +8,25 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.databinding.FragmentStartBinding
-import com.example.csgocaseswatcherapp.databinding.NewFrontPageBinding
 
-class StartFragment : Fragment(R.layout.new_front_page) {
+class StartFragment : Fragment(R.layout.fragment_start) {
 
-    private lateinit var binding: NewFrontPageBinding
+    private lateinit var binding: FragmentStartBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        binding = NewFrontPageBinding.inflate(inflater, container, false)
+        binding = FragmentStartBinding.inflate(inflater, container, false)
 
-//        binding.casePreviewButton.setOnClickListener {
-//            findNavController().navigate(R.id.casePreviewFragment)
-//        }
-//
-//        binding.portfolioButton.setOnClickListener {
-//            findNavController().navigate(R.id.portfolioFragment)
-//        }
+        binding.caseOverviewButton.setOnClickListener {
+            findNavController().navigate(R.id.casePreviewFragment)
+        }
+
+        binding.casePortfolioButton.setOnClickListener {
+            findNavController().navigate(R.id.portfolioFragment)
+        }
 
         return binding.root
     }
