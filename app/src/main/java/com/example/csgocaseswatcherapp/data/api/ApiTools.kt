@@ -22,7 +22,7 @@ class ApiTools {
 
         private fun getRetrofit(): Retrofit {
             return Retrofit.Builder()
-                .baseUrl("http://192.168.1.248:8080/")
+                .baseUrl("http://192.168.1.188:8080/")
                 .client(getClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

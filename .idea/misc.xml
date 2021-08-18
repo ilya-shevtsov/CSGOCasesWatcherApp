@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/csgocaseswatcherapp/presentation/CasePresenter.kt" />
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/drawable-xxxhdpi/button_background.xml" value="0.1037037037037037" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_case_analytics_details.xml" value="0.1272644927536232" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_case_details.xml" value="0.152" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_case_preview.xml" value="0.2234375" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_container.xml" value="0.2234375" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_start.xml" value="0.2234375" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/item_case.xml" value="0.264" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/new_front_page.xml" value="0.2234375" />
+      </map>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
