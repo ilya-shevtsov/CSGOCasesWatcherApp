@@ -29,7 +29,7 @@ class CaseAnalyticsFragment : Fragment(R.layout.fragment_case_analytics) {
 //        val action = CaseAnalyticsFragmentDirections.action
 //        findNavController().navigate(action)
 //    })
-
+//
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
