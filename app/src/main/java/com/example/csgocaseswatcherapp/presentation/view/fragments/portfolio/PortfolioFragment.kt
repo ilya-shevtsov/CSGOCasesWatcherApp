@@ -19,10 +19,6 @@ class PortfolioFragment : Fragment(R.layout.fragment_portfolio) {
     ): View {
         binding = FragmentPortfolioBinding.inflate(inflater, container, false)
 
-//        binding.navigateToHomeScreenButton.setOnClickListener {
-//            findNavController().navigate(R.id.startFragment)
-//        }
-
         return binding.root
     }
 }
