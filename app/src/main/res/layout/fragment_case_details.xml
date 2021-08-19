@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    tools:context=".presentation.view.fragments.caseoverviewdetails.CaseDetailsFragment">
+    android:background="@color/frontPageBackground"
+    tools:context=".presentation.view.fragments.casedetails.CaseDetailsFragment">
 
 
     <TextView
         android:id="@+id/caseName"
+        android:textColor="@color/black"
         android:layout_width="0dp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintHorizontal_bias="0.5"
-        fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintStart_toStartOf="@id/caseImage"
         fresco:layout_constraintTop_toTopOf="parent"
         tools:text="CaseName" />
 
@@ -24,6 +27,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         fresco:actualImageScaleType="fitCenter"
+        android:layout_marginStart="8dp"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@id/caseName"
         tools:background="@color/black" />
@@ -31,7 +35,9 @@
 
     <TextView
         android:id="@+id/lowestPrice"
+        android:textColor="@color/black"
         android:layout_width="0dp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -43,7 +49,9 @@
 
     <TextView
         android:id="@+id/volume"
+        android:textColor="@color/black"
         android:layout_width="0dp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -56,6 +64,8 @@
     <TextView
         android:id="@+id/medianPrice"
         android:layout_width="0dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -68,6 +78,8 @@
     <TextView
         android:id="@+id/releaseDate"
         android:layout_width="0dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -80,7 +92,9 @@
     <TextView
         android:id="@+id/dropStatus"
         android:layout_width="0dp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
         fresco:layout_constraintBottom_toBottomOf="@id/caseImage"
@@ -95,7 +109,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
-        android:background="@color/white"
+        android:background="@color/black"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintBottom_toTopOf="@id/description"
@@ -105,10 +119,11 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
         android:textSize="16sp"
         fresco:layout_constraintBottom_toTopOf="@+id/descriptionSeparatorTwo"
         fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintHorizontal_bias="0.0"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@id/caseImage" />
 
@@ -118,24 +133,14 @@
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
-        android:background="@color/white"
-        fresco:layout_constraintBottom_toTopOf="@id/grid"
+        android:background="@color/black"
+        fresco:layout_constraintBottom_toBottomOf="parent"
         fresco:layout_constraintEnd_toEndOf="parent"
         fresco:layout_constraintStart_toStartOf="parent"
         fresco:layout_constraintTop_toBottomOf="@id/description" />
 
 
-    <GridLayout
-        android:id="@+id/grid"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:columnCount="6"
-        android:rowCount="3"
-        fresco:layout_constraintBottom_toBottomOf="parent"
-        fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintStart_toStartOf="parent"
-        fresco:layout_constraintTop_toBottomOf="@id/descriptionSeparatorTwo"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

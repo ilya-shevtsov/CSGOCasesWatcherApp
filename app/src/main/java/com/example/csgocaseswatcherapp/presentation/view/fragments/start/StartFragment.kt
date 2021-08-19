@@ -20,16 +20,16 @@ class StartFragment : Fragment(R.layout.fragment_start) {
 
         binding = FragmentStartBinding.inflate(inflater, container, false)
 
-        binding.casePreviewButton.setOnClickListener {
+        binding.caseOverviewButton.setOnClickListener {
             findNavController().navigate(R.id.caseOverviewFragment)
         }
 
-        binding.portfolioButton.setOnClickListener {
+        binding.casePortfolioButton.setOnClickListener {
             findNavController().navigate(R.id.portfolioFragment)
         }
-        binding.caseAnalyticsButton.setOnClickListener {
-            findNavController().navigate(R.id.caseAnalyticsFragment)
-        }
+//        binding.caseAnalyticsButton.setOnClickListener {
+//            findNavController().navigate(R.id.caseAnalyticsFragment)
+//        }
 
         return binding.root
     }

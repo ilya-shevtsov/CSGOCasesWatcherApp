@@ -3,18 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/drawable-v24/button_background.xml" value="0.1" />
         <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/drawable-xxxhdpi/button_background.xml" value="0.1037037037037037" />
-        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_case_analytics_details.xml" value="0.1272644927536232" />
         <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_case_details.xml" value="0.152" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_case_overview.xml" value="0.1" />
         <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_case_preview.xml" value="0.2234375" />
         <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_container.xml" value="0.2234375" />
-        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_start.xml" value="0.2234375" />
+        <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/fragment_start.xml" value="0.2" />
         <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/item_case.xml" value="0.264" />
         <entry key="..\:/(A) My Things/Programing/Android Studio/CSGOCasesWatcherApp/CSGOCasesWatcherApp/app/src/main/res/layout/new_front_page.xml" value="0.2234375" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
