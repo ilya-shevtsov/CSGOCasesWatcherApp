@@ -16,12 +16,12 @@ class CaseAnalyticsDetailsViewModel @Inject constructor(
                 caseName = caseName,
                 dailyAvgReturnInPercent = dailyAvgReturnInPercent.toString(),
                 dailyAvgReturnInRUB = dailyAvgReturnInRUB.toString(),
-                dailyStandardDeviation = dailyStandardDeviation.toString(),
-                dailySharpRatio = dailySharpRatio.toString(),
+                dailyStandardDeviation = String.format("%.2f", dailyStandardDeviation),
+                dailySharpRatio = String.format("%.2f", dailySharpRatio),
                 monthlyAvgReturnInPercent = monthlyAvgReturnInPercent.toString(),
                 monthlyAvgReturnInRUB = monthlyAvgReturnInRUB.toString(),
-                monthlyStandardDeviation = monthlyStandardDeviation.toString(),
-                monthlySharpRatio = monthlySharpRatio.toString()
+                monthlyStandardDeviation = String.format("%.2f", monthlyStandardDeviation),
+                monthlySharpRatio = String.format("%.2f", monthlySharpRatio)
             )
             viewStateLiveData.postValue(state)
         }
