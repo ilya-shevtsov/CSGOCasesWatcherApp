@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.csgocaseswatcherapp.R
 import com.example.csgocaseswatcherapp.core.CaseWatcherApplication
@@ -24,12 +25,11 @@ class CaseAnalyticsFragment : Fragment(R.layout.fragment_case_analytics) {
 
     private lateinit var viewModel: CaseAnalyticsViewModel
 
-    private val adapter: CaseAnalyticsAdapter = CaseAnalyticsAdapter(onItemClicked = {})
-//    (onItemClicked = { case ->
-//        val action = CaseAnalyticsFragmentDirections.action
-//        findNavController().navigate(action)
-//    })
-//
+    private val adapter: CaseAnalyticsAdapter = CaseAnalyticsAdapter(onItemClicked = { case ->
+        val action = CaseAnalyticsFragmentDirections.actionCaseAnalyticsFragmentToCaseAnalyticsDetailsFragment(case)
+        findNavController().navigate(action)
+    })
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
