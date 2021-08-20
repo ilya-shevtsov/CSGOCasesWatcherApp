@@ -57,6 +57,7 @@
 
     <Button
         android:id="@+id/caseOverviewButton"
+        app:layout_constraintVertical_chainStyle="packed"
         android:layout_width="280dp"
         android:layout_height="55dp"
         android:layout_marginStart="8dp"
@@ -65,27 +66,43 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/caseAnalyticsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frontPageTextSlogan"
-        app:layout_constraintVertical_bias="0.300" />
+        app:layout_constraintTop_toTopOf="@+id/frontPageTextSlogan" />
+
+    <Button
+        android:id="@+id/caseAnalyticsButton"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/button_background"
+        android:text="@string/front_page_analytics_button"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/casePortfolioButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caseOverviewButton" />
 
     <Button
         android:id="@+id/casePortfolioButton"
         android:layout_width="280dp"
         android:layout_height="55dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/button_background"
         android:text="@string/front_page_portfolio_button"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
+        app:layout_constraintVertical_bias="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caseOverviewButton"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintTop_toBottomOf="@+id/caseAnalyticsButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

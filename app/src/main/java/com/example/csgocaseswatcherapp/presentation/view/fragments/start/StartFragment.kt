@@ -27,9 +27,9 @@ class StartFragment : Fragment(R.layout.fragment_start) {
         binding.casePortfolioButton.setOnClickListener {
             findNavController().navigate(R.id.portfolioFragment)
         }
-//        binding.caseAnalyticsButton.setOnClickListener {
-//            findNavController().navigate(R.id.caseAnalyticsFragment)
-//        }
+        binding.caseAnalyticsButton.setOnClickListener {
+            findNavController().navigate(R.id.caseAnalyticsFragment)
+        }
 
         return binding.root
     }

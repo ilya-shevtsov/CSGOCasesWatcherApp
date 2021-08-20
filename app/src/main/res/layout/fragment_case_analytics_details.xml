@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
-    tools:context=".presentation.view.fragments.caseoverviewdetails.CaseDetailsFragment">
+    android:background="@color/frontPageBackground"
+    tools:context=".presentation.view.fragments.caseanalyticsdetails.CaseAnalyticsDetailsFragment">
 
 
     <TextView
         android:id="@+id/caseName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -32,6 +35,8 @@
     <TextView
         android:id="@+id/monthlyAvgReturnInPercentDetails"
         android:layout_width="0dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -44,6 +49,8 @@
     <TextView
         android:id="@+id/monthlyAvgReturnInRubDetails"
         android:layout_width="0dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -56,6 +63,8 @@
     <TextView
         android:id="@+id/monthlyStandardDeviationDetails"
         android:layout_width="0dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -68,6 +77,8 @@
     <TextView
         android:id="@+id/monthlySharpRatioDetails"
         android:layout_width="0dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -80,6 +91,8 @@
     <TextView
         android:id="@+id/dailyAvgReturnInPercentDetails"
         android:layout_width="0dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -93,6 +106,8 @@
         android:id="@+id/dailyAvgReturnInRubDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
         fresco:layout_constraintBottom_toTopOf="@+id/dailyStandardDeviationDetails"
@@ -104,6 +119,8 @@
     <TextView
         android:id="@+id/dailyStandardDeviationDetails"
         android:layout_width="0dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -116,6 +133,8 @@
     <TextView
         android:id="@+id/dailySharpRatioDetails"
         android:layout_width="0dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textSize="16sp"
@@ -130,6 +149,7 @@
         android:id="@+id/separatorOne"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:textColor="@color/black"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:background="@color/white"
@@ -142,6 +162,7 @@
         android:id="@+id/separatorTwo"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:textColor="@color/black"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
         android:background="@color/white"

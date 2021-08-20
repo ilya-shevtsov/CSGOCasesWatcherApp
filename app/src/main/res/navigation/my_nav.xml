@@ -61,5 +61,20 @@
         <action
             android:id="@+id/action_caseAnalyticsFragment_to_startFragment"
             app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_caseAnalyticsFragment_to_caseAnalyticsDetailsFragment"
+            app:destination="@id/caseAnalyticsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caseAnalyticsDetailsFragment"
+        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.caseanalyticsdetails.CaseAnalyticsDetailsFragment"
+        android:label="Case Analytical Details"
+        tools:layout="@layout/fragment_case_analytics_details">
+        <action
+            android:id="@+id/action_caseAnalyticsDetailsFragment_to_caseAnalyticsFragment"
+            app:destination="@id/caseAnalyticsFragment" />
+        <argument
+            android:name="currentCase"
+            app:argType="com.example.csgocaseswatcherapp.presentation.model.caseanalyticsitem.CaseAnalyticsItem" />
     </fragment>
 </navigation>
