@@ -47,11 +47,15 @@ class CaseDetailsFragment : Fragment(R.layout.fragment_case_details) {
         with(binding) {
 
             viewModel.viewStateLiveData.observe(viewLifecycleOwner) { state ->
-
                 caseName.text = state.caseName
+                caseImage.setImageURI(state.caseImage)
+
+                lowestPrice.text = getString(R.string.case_lowest_price, state.lowestPrice)
+                medianPrice.text = getString(R.string.case_median_price, state.medianPrice)
                 volume.text = getString(R.string.case_volume, state.volume)
                 releaseDate.text = getString(R.string.case_release_date, state.releaseDate)
                 dropStatus.text = getString(R.string.case_drop_status, state.dropStatus)
+
                 description.text = state.description
             }
         }
