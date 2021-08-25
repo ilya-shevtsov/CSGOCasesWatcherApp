@@ -82,7 +82,7 @@
     </fragment>
     <fragment
         android:id="@+id/addCaseFragment"
-        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.AddCaseFragment.AddCaseFragment"
+        android:name="com.example.csgocaseswatcherapp.presentation.view.fragments.addCaseFragment.AddCaseFragment"
         android:label="AddCaseFragment"
         tools:layout="@layout/fragment_add_case">
         <action

@@ -1,4 +1,4 @@
-package com.example.csgocaseswatcherapp.presentation.view.fragments.AddCaseFragment
+package com.example.csgocaseswatcherapp.presentation.view.fragments.addCaseFragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,7 +29,6 @@ class AddCaseFragment : Fragment(R.layout.fragment_add_case) {
             )
         binding.caseNameEditText.threshold = 1
         binding.caseNameEditText.setAdapter(adapter)
-
 
         return binding.root
     }
