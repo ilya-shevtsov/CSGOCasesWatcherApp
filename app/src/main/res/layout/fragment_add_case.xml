@@ -1,7 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/frontPageBackground">
+
+
+    <ImageView
+        android:id="@+id/backgroundCyrcle"
+        android:layout_width="138dp"
+        android:layout_height="138dp"
+        android:layout_marginEnd="304dp"
+        android:src="@drawable/ic_backgroundcyrcle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/backgroundCyrcleTwo"
+        android:layout_width="143dp"
+        android:layout_height="155dp"
+        android:layout_marginBottom="612dp"
+        android:src="@drawable/ic_backgroundcyrcletwo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/CaseNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/add_case_case_name"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/caseNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@id/numberOfCaseTextView"
+        app:layout_constraintEnd_toEndOf="@id/CaseNameTextView"
+        app:layout_constraintStart_toStartOf="@id/CaseNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/CaseNameTextView" />
+
+    <TextView
+        android:id="@+id/numberOfCaseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/add_case_number_of_cases"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/caseNameEditText"
+        app:layout_constraintStart_toStartOf="@id/caseNameEditText"
+        app:layout_constraintTop_toBottomOf="@id/caseNameEditText" />
+
+    <EditText
+        android:id="@+id/numberOfCaseEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="@id/numberOfCaseTextView"
+        app:layout_constraintStart_toStartOf="@id/numberOfCaseTextView"
+        app:layout_constraintTop_toBottomOf="@id/numberOfCaseTextView" />
+
+    <TextView
+        android:id="@+id/purchasePriceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/add_case_purchase_price"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/numberOfCaseEditText"
+        app:layout_constraintStart_toStartOf="@id/numberOfCaseEditText"
+        app:layout_constraintTop_toBottomOf="@id/numberOfCaseEditText"
+        />
+
+    <EditText
+        android:id="@+id/purchasePriceEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="@id/purchasePriceTextView"
+        app:layout_constraintStart_toStartOf="@id/purchasePriceTextView"
+        app:layout_constraintTop_toBottomOf="@id/purchasePriceTextView"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

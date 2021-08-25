@@ -23,6 +23,10 @@ class PortfolioFragment : Fragment(R.layout.fragment_portfolio) {
             findNavController().navigate(R.id.startFragment)
         }
 
+        binding.addCaseButton.setOnClickListener {
+            findNavController().navigate(R.id.addCaseFragment)
+        }
+
 
 
         return binding.root
