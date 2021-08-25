@@ -13,28 +13,35 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startLine"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="CaseName" />
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/caseImage"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomLine"
         app:layout_constraintEnd_toStartOf="@id/monthlyAvgReturnInPercent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startLine"
         app:layout_constraintTop_toBottomOf="@+id/caseName"
         fresco:actualImageScaleType="fitCenter"
         tools:background="@color/black" />
 
-
     <TextView
+
         android:id="@+id/monthlyAvgReturnInPercent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/monthlyAvgReturnInRub"
         app:layout_constraintStart_toEndOf="@id/caseImage"
         app:layout_constraintTop_toBottomOf="@+id/caseName"
@@ -45,17 +52,55 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/caseImage"
+        app:layout_constraintEnd_toStartOf="@id/endLine"
         app:layout_constraintStart_toEndOf="@id/caseImage"
         app:layout_constraintTop_toBottomOf="@+id/monthlyAvgReturnInPercent"
         tools:text="@string/monthly_avg_return_in_rub" />
 
     <View
+        android:id="@+id/topLine"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:background="@color/white"
+        android:layout_marginEnd="8dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/caseName"
+        app:layout_constraintEnd_toEndOf="@id/endLine"
+        app:layout_constraintStart_toStartOf="@id/startLine" />
+
+    <View
+        android:id="@+id/bottomLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/black"
         app:layout_constraintTop_toBottomOf="@id/caseImage" />
 
+    <View
+        android:id="@+id/startLine"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topLine" />
+
+    <View
+        android:id="@+id/endLine"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topLine" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
