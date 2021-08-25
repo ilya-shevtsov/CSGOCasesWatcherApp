@@ -23,6 +23,8 @@ class PortfolioFragment : Fragment(R.layout.fragment_portfolio) {
             findNavController().navigate(R.id.startFragment)
         }
 
+
+
         return binding.root
     }
 }
