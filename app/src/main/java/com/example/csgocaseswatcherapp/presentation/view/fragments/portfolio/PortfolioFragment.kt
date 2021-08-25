@@ -19,6 +19,12 @@ class PortfolioFragment : Fragment(R.layout.fragment_portfolio) {
     ): View {
         binding = FragmentPortfolioBinding.inflate(inflater, container, false)
 
+        binding.homeButton.setOnClickListener {
+            findNavController().navigate(R.id.startFragment)
+        }
+
+
+
         return binding.root
     }
 }
