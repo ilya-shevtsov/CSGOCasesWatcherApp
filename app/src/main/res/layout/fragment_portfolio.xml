@@ -65,6 +65,14 @@
         app:layout_constraintStart_toStartOf="@id/portfolioButton"
         app:layout_constraintTop_toBottomOf="@id/portfolioButton" />
 
+    <Button
+        android:id="@+id/addCaseButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/ic_add_case_button"
+        app:layout_constraintStart_toStartOf="@id/detailsButton"
+        app:layout_constraintTop_toBottomOf="@id/detailsButton" />
+
 
     <View
         android:id="@+id/sideLine"
