@@ -42,15 +42,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+
+    <AutoCompleteTextView
         android:id="@+id/caseNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:hint="@string/add_case_name_hint"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@id/numberOfCaseTextView"
         app:layout_constraintEnd_toEndOf="@id/CaseNameTextView"
         app:layout_constraintStart_toStartOf="@id/CaseNameTextView"
         app:layout_constraintTop_toBottomOf="@id/CaseNameTextView" />
+
 
     <TextView
         android:id="@+id/numberOfCaseTextView"
@@ -65,11 +70,14 @@
         app:layout_constraintStart_toStartOf="@id/caseNameEditText"
         app:layout_constraintTop_toBottomOf="@id/caseNameEditText" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/numberOfCaseEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:hint="@string/add_case_number_of_cases_hint"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@id/numberOfCaseTextView"
         app:layout_constraintStart_toStartOf="@id/numberOfCaseTextView"
         app:layout_constraintTop_toBottomOf="@id/numberOfCaseTextView" />
@@ -85,17 +93,18 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/numberOfCaseEditText"
         app:layout_constraintStart_toStartOf="@id/numberOfCaseEditText"
-        app:layout_constraintTop_toBottomOf="@id/numberOfCaseEditText"
-        />
+        app:layout_constraintTop_toBottomOf="@id/numberOfCaseEditText" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/purchasePriceEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:hint="@string/add_case_purchase_price_hint"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@id/purchasePriceTextView"
         app:layout_constraintStart_toStartOf="@id/purchasePriceTextView"
-        app:layout_constraintTop_toBottomOf="@id/purchasePriceTextView"
-        />
+        app:layout_constraintTop_toBottomOf="@id/purchasePriceTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

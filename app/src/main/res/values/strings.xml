@@ -33,11 +33,50 @@
     <string name="add_case_number_of_cases">Number of cases:</string>
     <string name="add_case_purchase_price">Purchase price:</string>
 
+    <string-array name="case_name_array">
+        <item>Chroma Case</item>
+        <item>Chroma 2 Case</item>
+        <item>Chroma 3 Case</item>
+        <item>Clutch Case</item>
+        <item>CSGO Weapon Case</item>
+        <item>CSGO Weapon Case 2</item>
+        <item>CSGO Weapon Case 3</item>
+        <item>CS20 Case</item>
+        <item>Danger Zone Case</item>
+        <item>eSports 2013 Case</item>
+        <item>eSports 2013 Winter Case</item>
+        <item>eSports 2014 Summer Case</item>
+        <item>Falchion Case</item>
+        <item>Fracture Case</item>
+        <item>Gamma Case</item>
+        <item>Gamma 2 Case</item>
+        <item>Glove Case</item>
+        <item>Horizon Case</item>
+        <item>Huntsman Weapon Case</item>
+        <item>Operation Bravo Case</item>
+        <item>Operation Breakout Weapon Case</item>
+        <item>Operation Broken Fang Case</item>
+        <item>Operation Hydra Case</item>
+        <item>Operation Phoenix Weapon Case</item>
+        <item>Operation Vanguard Weapon Case</item>
+        <item>Operation Wildfire Case</item>
+        <item>Prisma Case</item>
+        <item>Prisma 2 Case</item>
+        <item>Revolver Case</item>
+        <item>Shadow Case</item>
+        <item>Shattered Web Case</item>
+        <item>Spectrum Case</item>
+        <item>Spectrum 2 Case</item>
+        <item>Winter Offensive Weapon Case</item>
+    </string-array>
+
     // common
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="descriptionExample">The Chroma Case is a weapon case consisting of 14 community-designed weapon skins released as part of the January 8, 2015 update. It requires a Chroma Case Key to be opened. The Chroma Case also has six exclusive community created knife finishes: Damascus Steel, Doppler, Marble Fade, Tiger Tooth, Rust Coat, and Ultraviolet. The Spectrum Case and Spectrum 2 Case includes these Chroma finishes on the Huntsman Knife, Butterfly Knife, Falchion Knife, Shadow Daggers and the Bowie Knife. The Prisma Case contains these Chroma finishes on the Navaja Knife, Stiletto Knife, Talon Knife, and the Ursus Knife.</string>
     <string name="nav_to_home_screen">Home</string>
-
+    <string name="add_case_name_hint">Type in case name</string>
+    <string name="add_case_number_of_cases_hint">Type in number of cases you purchased</string>
+    <string name="add_case_purchase_price_hint">Type in purchase price for each case</string>
 
 
 </resources>
